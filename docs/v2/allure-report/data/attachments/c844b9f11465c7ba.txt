@@ -1,0 +1,612 @@
+Local node is stopped [3315064].
+######## nodeos command line:
+funod --http-server-address 0.0.0.0:8888 --chain-state-db-size-mb 1024 --contracts-console --verbose-http-errors --enable-stale-production --producer-name flon --signature-provider FU6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV=KEY:5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3 --plugin eosio::producer_api_plugin --plugin eosio::producer_plugin --plugin eosio::chain_api_plugin --plugin eosio::http_plugin --plugin eosio::state_history_plugin --plugin eosio::history_api_plugin --filter-on=* --disable-replay-opts --delete-all-blocks
+Starting nodeos, cpu percent: 0, 1* 0* 0* 
+Local node is running. Block number is 13
+* Wallet name is ``_127_0_0_1_8888_default``, wallet directory is
+    /root/flon-wallet//.
+* Created wallet ``_127_0_0_1_8888_default``.
+* Password is saved to the file ``_127_0_0_1_8888_passwords.json`` 
+in the wallet directory.
+* The wallet is empty.
+fucli --url http://127.0.0.1:8888 create account flon flon.test FU5B6GSnUBcauVhdJ5BgKvK1r6ADTeaZQFc2Q2YbxRV8f3cEMvsy FU5B6GSnUBcauVhdJ5BgKvK1r6ADTeaZQFc2Q2YbxRV8f3cEMvsy
+flon.test
+
+
+fucli --url http://127.0.0.1:8888 create account flon flon.bpay FU5F7T7DHFyyiU5ehFtGC5uCxW5fmUXBxaMcb9mHRhyZMf4Agve4 FU5F7T7DHFyyiU5ehFtGC5uCxW5fmUXBxaMcb9mHRhyZMf4Agve4
+flon.bpay
+
+
+fucli --url http://127.0.0.1:8888 create account flon flon.msig FU6segbZQBLwojzrRoaM9yZDD8A6JMt6c7wFtzVwwDEJLCtncRNP FU6segbZQBLwojzrRoaM9yZDD8A6JMt6c7wFtzVwwDEJLCtncRNP
+flon.msig
+
+
+fucli --url http://127.0.0.1:8888 create account flon flon.names FU7UnuA9tErcQjUR3WeddZ4kajpndKeCU6r8jx4m4qu9xmf5Jn2a FU7UnuA9tErcQjUR3WeddZ4kajpndKeCU6r8jx4m4qu9xmf5Jn2a
+flon.names
+
+
+fucli --url http://127.0.0.1:8888 create account flon flon.fees FU6qLPMANBi94Umk1w7JfKsYBinCSHk2YKCugApGUWvQAM6cdV3Q FU6qLPMANBi94Umk1w7JfKsYBinCSHk2YKCugApGUWvQAM6cdV3Q
+flon.fees
+
+
+fucli --url http://127.0.0.1:8888 create account flon flon.stake FU8C11dAn8LtFUCQsxgzrzbdUpFzS6y389GTfAQmo1HLy9zsXz6n FU8C11dAn8LtFUCQsxgzrzbdUpFzS6y389GTfAQmo1HLy9zsXz6n
+flon.stake
+
+
+fucli --url http://127.0.0.1:8888 create account flon flon.token FU5gyQe6vsqrCCMxUAAcC8x8oeeLarw7PS1VPtJgSUVbPWXTxeTu FU5gyQe6vsqrCCMxUAAcC8x8oeeLarw7PS1VPtJgSUVbPWXTxeTu
+flon.token
+
+
+fucli --url http://127.0.0.1:8888 create account flon flon.reward FU7EDQtMxQGJk2nFkzhwv7MNo7N4h6F5ZXeMyaPoaGbsDqxRunNF FU7EDQtMxQGJk2nFkzhwv7MNo7N4h6F5ZXeMyaPoaGbsDqxRunNF
+flon.reward
+
+
+fucli --url http://127.0.0.1:8888 create account flon flon.vote FU6pY2x8VNbM3HzXxE89rwTTmjDUtNYF7uoWxa2eEvzCvyecTAHr FU6pY2x8VNbM3HzXxE89rwTTmjDUtNYF7uoWxa2eEvzCvyecTAHr
+flon.vote
+
+
+fucli --url http://127.0.0.1:8888 create account flon flon.evm FU7UThsAMPMTjASK9XVHMGTg8DvpTDLG5oNU7Sf3tZuniRfHnts6 FU7UThsAMPMTjASK9XVHMGTg8DvpTDLG5oNU7Sf3tZuniRfHnts6
+flon.evm
+
+
+fucli --url http://127.0.0.1:8888 create account flon evm.miner FU6b1kDUm87YjeMHDEbSr3LMA6QBxaGrZvYZ9TAkRJpszB4WU8Hs FU6b1kDUm87YjeMHDEbSr3LMA6QBxaGrZvYZ9TAkRJpszB4WU8Hs
+evm.miner
+
+
+fucli --url http://127.0.0.1:8888 create account flon test FU82RqJxX1VT9jnuncs4r2rvGcQ81PHuHqfF3PFxFWL8vifRY1r2 FU82RqJxX1VT9jnuncs4r2rvGcQ81PHuHqfF3PFxFWL8vifRY1r2
+test
+
+
+{"result":"ok"}
+5032
+* Contract /root/contracts/flon-core-test/gastest flon
+    is deployed.
+fucli --url http://127.0.0.1:8888 set account permission flon active --add-code
+#          flon <= flon::updateauth             {"account":"flon","permission":"active","parent":"owner","auth":{"threshold":1,"keys":[{"key":"FU6MR...
+executed transaction: 877e61fdf44474f66d758a202aa5abc2b65a44c8d79c601e0cbc8dff2c666c84  184 bytes  146 us
+warn  2025-05-20T09:36:58.642 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* account permission ``None``:
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "c3a6138c5061cf291310887c0b5c71fcaffeab90d5deb50d3b9e687cead45071"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"c3a6138c5061cf291310887c0b5c71fcaffeab90d5deb50d3b9e687cead45071"}
+executed transaction: fb791ec94408db15dd57e440979571dc009790dc344f8c09bc2f7e6dab229c42  128 bytes  145 us
+warn  2025-05-20T09:36:58.659 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "d528b9f6e9693f45ed277af93474fd473ce7d831dae2180cca35d907bd10cb40"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"d528b9f6e9693f45ed277af93474fd473ce7d831dae2180cca35d907bd10cb40"}
+executed transaction: d529da98a474b97987495ee3ef6ef97864fe9a227803dbfe661e24a6fa7afeaf  128 bytes  146 us
+warn  2025-05-20T09:36:58.676 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "5443fcf88330c586bc0e5f3dee10e7f63c76c00249c87fe4fbf7f38c082006b4"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"5443fcf88330c586bc0e5f3dee10e7f63c76c00249c87fe4fbf7f38c082006b4"}
+executed transaction: 0fd6029d1be29f188d04abf5eedc4ca6224c72c6d91a8160b69663ca4c077865  128 bytes  125 us
+warn  2025-05-20T09:36:58.693 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "f0af56d2c5a48d60a4a5b5c903edfb7db3a736a94ed589d0b797df33ff9d3e1d"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"f0af56d2c5a48d60a4a5b5c903edfb7db3a736a94ed589d0b797df33ff9d3e1d"}
+executed transaction: 74fcab75ca05227d8ade99662f93b18d02fa0bab796831c0af9c43bb6aacd454  128 bytes  129 us
+warn  2025-05-20T09:36:58.709 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "2652f5f96006294109b3dd0bbde63693f55324af452b799ee137a81a905eed25"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"2652f5f96006294109b3dd0bbde63693f55324af452b799ee137a81a905eed25"}
+executed transaction: dbf39e482c4ff06f6c9eebe9fd7cc2a17b2ad5da4675f3a4e90526cabcffd10a  128 bytes  119 us
+warn  2025-05-20T09:36:58.725 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "8ba52fe7a3956c5cd3a656a3174b931d3bb2abb45578befc59f283ecd816a405"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"8ba52fe7a3956c5cd3a656a3174b931d3bb2abb45578befc59f283ecd816a405"}
+executed transaction: e725297cc40dc6242204c706d270d26a8e57311c76ff0c63b03206fafa203699  128 bytes  114 us
+warn  2025-05-20T09:36:58.741 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "ad9e3d8f650687709fd68f4b90b41f7d825a365b02c23a636cef88ac2ac00c43"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"ad9e3d8f650687709fd68f4b90b41f7d825a365b02c23a636cef88ac2ac00c43"}
+executed transaction: 8ad003a0fcb0aad7d67627484569f38e7f5d534feaae00213cd7fc4927b2515f  128 bytes  130 us
+warn  2025-05-20T09:36:58.757 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "68dcaa34c0517d19666e6b33add67351d8c5f69e999ca1e37931bc410a297428"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"68dcaa34c0517d19666e6b33add67351d8c5f69e999ca1e37931bc410a297428"}
+executed transaction: 8028cfbe326338d6facc69ba3f8d2b83cfcb23cb2ed6a01f41218e9c1af3e551  128 bytes  120 us
+warn  2025-05-20T09:36:58.774 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "e0fb64b1085cc5538970158d05a009c24e276fb94e1a0bf6a528b48fbc4ff526"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"e0fb64b1085cc5538970158d05a009c24e276fb94e1a0bf6a528b48fbc4ff526"}
+executed transaction: ebca45995700274da630c32d97d7dfa4cd96480e4408eb96901aee90f095f21e  128 bytes  129 us
+warn  2025-05-20T09:36:58.791 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "1a99a59d87e06e09ec5b028a9cbb7749b4a5ad8819004365d02dc4379a8b7241"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"1a99a59d87e06e09ec5b028a9cbb7749b4a5ad8819004365d02dc4379a8b7241"}
+executed transaction: 0eb85a8b6ea085303da4db6d727d0383cdb1329e1c1b46b6f4c80177de022714  128 bytes  115 us
+warn  2025-05-20T09:36:58.807 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "4e7bf348da00a945489b2a681749eb56f5de00b900014e137ddae39f48f69d67"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"4e7bf348da00a945489b2a681749eb56f5de00b900014e137ddae39f48f69d67"}
+executed transaction: 59299eeae463ce2be73777403889025b2fd4511ac46d5025e5356954f1b18cb4  128 bytes  116 us
+warn  2025-05-20T09:36:58.823 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "4fca8bd82bbd181e714e283f83e1b45d95ca5af40fb89ad3977b653c448f78c2"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"4fca8bd82bbd181e714e283f83e1b45d95ca5af40fb89ad3977b653c448f78c2"}
+executed transaction: 96dc225c6a42383b38291b8aedaba074241e3ab2a31b3cb4684ca030aaf77fd9  128 bytes  114 us
+warn  2025-05-20T09:36:58.839 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "299dcb6af692324b899b39f16d5a530a33062804e41f09dc97e9f156b4476707"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"299dcb6af692324b899b39f16d5a530a33062804e41f09dc97e9f156b4476707"}
+executed transaction: c3974bd23e695e891248073dd13b4f38adfb792a9a401bf8f14f55d3af889de5  128 bytes  111 us
+warn  2025-05-20T09:36:58.855 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "bcd2a26394b36614fd4894241d3c451ab0f6fd110958c3423073621a70826e99"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"bcd2a26394b36614fd4894241d3c451ab0f6fd110958c3423073621a70826e99"}
+executed transaction: 15eaae4d04b90260c34dc7c60edfe48f31a67b2dc39adb725f643d9a8cf6d0ad  128 bytes  133 us
+warn  2025-05-20T09:36:58.872 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "35c2186cc36f7bb4aeaf4487b36e57039ccf45a9136aa856a5d569ecca55ef2b"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"35c2186cc36f7bb4aeaf4487b36e57039ccf45a9136aa856a5d569ecca55ef2b"}
+executed transaction: fd90f95f59f14936f5bf2cfa256fb7cb1a7acd86eaf732c229746d7cfc116085  128 bytes  137 us
+warn  2025-05-20T09:36:58.889 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "6bcb40a24e49c26d0a60513b6aeb8551d264e4717f306b81a37a5afb3b47cedc"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"6bcb40a24e49c26d0a60513b6aeb8551d264e4717f306b81a37a5afb3b47cedc"}
+executed transaction: b9e8497b1ba129e5238ec170fdb8fa47ae7bd844dece659522e270dca35c3057  128 bytes  126 us
+warn  2025-05-20T09:36:58.906 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "63320dd4a58212e4d32d1f58926b73ca33a247326c2a5e9fd39268d2384e011a"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"63320dd4a58212e4d32d1f58926b73ca33a247326c2a5e9fd39268d2384e011a"}
+executed transaction: d1b81d1b0540fba04236dffb5f3c8aeb4fb740d711540838302b2f6b39cd568a  128 bytes  124 us
+warn  2025-05-20T09:36:58.922 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "72df75c0bf7fce15d7b95d8565eba38ff58231789273d39c68693c3557d64c54"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"72df75c0bf7fce15d7b95d8565eba38ff58231789273d39c68693c3557d64c54"}
+executed transaction: b77cd8d93b9fa810381f296b273183e72efa8c5af3e2e2b54562a2eebabab8a4  128 bytes  120 us
+warn  2025-05-20T09:36:58.938 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+34322
+* Contract /root/contracts/flon-core-test/gastest flon.reward
+    is deployed.
+fucli --url http://127.0.0.1:8888 set account permission flon.reward active --add-code
+#          flon <= flon::updateauth             {"account":"flon.reward","permission":"active","parent":"owner","auth":{"threshold":1,"keys":[{"key"...
+executed transaction: 037126edab6a963362557fc684dadc6da3f5c0b91e4d1a8ae82119a1ec1761c1  184 bytes  182 us
+warn  2025-05-20T09:36:59.523 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* account permission ``None``:
+35256
+* Contract /root/contracts/flon-core-test/gastest flon.msig
+    is deployed.
+fucli --url http://127.0.0.1:8888 set account permission flon.msig active --add-code
+#          flon <= flon::updateauth             {"account":"flon.msig","permission":"active","parent":"owner","auth":{"threshold":1,"keys":[{"key":"...
+executed transaction: d2e4cf355c2c0eb9f555626496da7a31b3018e2a348939a3aa1a28f3dbb5ed40  184 bytes  120 us
+warn  2025-05-20T09:36:59.722 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* account permission ``None``:
+16304
+* Contract /root/contracts/flon-core-test/gastest flon.token
+    is deployed.
+fucli --url http://127.0.0.1:8888 set account permission flon.token active --add-code
+#          flon <= flon::updateauth             {"account":"flon.token","permission":"active","parent":"owner","auth":{"threshold":1,"keys":[{"key":...
+executed transaction: d8f7aafbf09d590880da80b8c7e5d963b5b3f0ffc6785f2d84de096974b870aa  184 bytes  142 us
+warn  2025-05-20T09:36:59.907 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* account permission ``None``:
+fucli --url http://127.0.0.1:8888 create account flon admin FU6REqQXrxzt5q1Bod2w8xjHUpxy7Lif1p1omPbCQf8fvQL1LSuf FU6REqQXrxzt5q1Bod2w8xjHUpxy7Lif1p1omPbCQf8fvQL1LSuf
+admin
+
+
+* push action ``flon.token create``:
+fucli --url http://127.0.0.1:8888 push action flon.token create '{"issuer": "admin", "maximum_supply": "10000000000.00000000 FLON"}' --permission flon.token@active
+#    flon.token <= flon.token::create           {"issuer":"admin","maximum_supply":"10000000000.00000000 FLON"}
+executed transaction: 10277b1017563fbced16ff600a567c41dcb3ff06c9dd8d6a5719cedb55b69470  120 bytes  166 us
+warn  2025-05-20T09:37:00.102 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon.token issue``:
+fucli --url http://127.0.0.1:8888 push action flon.token issue '{"to": "admin", "quantity": "10000000000.00000000 FLON", "memo": ""}' --permission admin@active
+#    flon.token <= flon.token::issue            {"to":"admin","quantity":"10000000000.00000000 FLON","memo":""}
+executed transaction: 05f16aae4103d97bce5d653c4d99ce474733dfb28db66ff186e0028a917ebb1b  120 bytes  210 us
+warn  2025-05-20T09:37:00.119 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+65414
+* Contract /root/contracts/flon-core-test/gastest flon
+    is deployed.
+fucli --url http://127.0.0.1:8888 set account permission flon active --add-code
+set_account_permission error
+* account permission ``None``:
+* push action ``flon init``:
+fucli --url http://127.0.0.1:8888 push action flon init '{"version": 0, "core": "8,FLON"}' --permission flon@active
+#          flon <= flon::init                   {"version":0,"core":"8,FLON"}
+#    flon.token <= flon.token::open             {"owner":"flon.gas","symbol":"8,FLON","ram_payer":"flon"}
+executed transaction: 55d767113644f37414331dbcf4dda27fed1cba4972dd4a502585998b75ca8353  104 bytes  265 us
+warn  2025-05-20T09:37:00.353 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon.token transfer``:
+fucli --url http://127.0.0.1:8888 push action flon.token transfer '{"from": "admin", "to": "flon", "quantity": "100000000.00000000 FLON", "memo": ""}' --permission admin@active
+#    flon.token <= flon.token::transfer         {"from":"admin","to":"flon","quantity":"100000000.00000000 FLON","memo":""}
+#         admin <= flon.token::transfer         {"from":"admin","to":"flon","quantity":"100000000.00000000 FLON","memo":""}
+#          flon <= flon.token::transfer         {"from":"admin","to":"flon","quantity":"100000000.00000000 FLON","memo":""}
+executed transaction: 4bc7d0297c96fa384fb054e19bf7342fd9ebc79076675f80b73c3a40aa7a6d62  128 bytes  215 us
+warn  2025-05-20T09:37:00.414 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+fucli --url http://127.0.0.1:8888 system newaccount flon first FU6RiShVFHgoo5iu8XSAX5hqX4bdAtM5BtWULNxogn3CkkZg6Rwv FU6RiShVFHgoo5iu8XSAX5hqX4bdAtM5BtWULNxogn3CkkZg6Rwv --json --fund-gas 0.00148250 FLON
+first
+29282
+* Contract /root/contracts/flon-core-test/gastest flon.test
+    is deployed.
+fucli --url http://127.0.0.1:8888 set account permission flon.test active --add-code
+#          flon <= flon::updateauth             {"account":"flon.test","permission":"active","parent":"owner","auth":{"threshold":1,"keys":[{"key":"...
+executed transaction: 1a254596b826e3b5947d44099f66e7c561a433434a209c25c36deed8bc9e3f40  184 bytes  159 us
+warn  2025-05-20T09:37:00.795 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* account permission ``None``:
+fucli --url http://127.0.0.1:8888 system newaccount flon user1 FU5V8AUS1REV9tQoJAHcrQzsPXvtxCMscuQ171eNnF36X9tYomvK FU5V8AUS1REV9tQoJAHcrQzsPXvtxCMscuQ171eNnF36X9tYomvK --json --fund-gas 0.1 FLON
+user1
+fucli --url http://127.0.0.1:8888 system newaccount flon user2 FU6St3wn1ptH9K8P6EbuMDYjSQe3Eu7GoM9DNLjUuxc3gHs7TxNv FU6St3wn1ptH9K8P6EbuMDYjSQe3Eu7GoM9DNLjUuxc3gHs7TxNv --json --fund-gas 0.00142650 FLON
+user2
+* push action ``flon.token transfer``:
+fucli --url http://127.0.0.1:8888 push action flon.token transfer '{"from": "admin", "to": "user2", "quantity": "0.00094750 FLON", "memo": ""}' --permission admin@active
+#    flon.token <= flon.token::transfer         {"from":"admin","to":"user2","quantity":"0.00094750 FLON","memo":""}
+#         admin <= flon.token::transfer         {"from":"admin","to":"user2","quantity":"0.00094750 FLON","memo":""}
+#         user2 <= flon.token::transfer         {"from":"admin","to":"user2","quantity":"0.00094750 FLON","memo":""}
+executed transaction: 3c748de15a75afecab28987293854d70e42641f17a10f2eec39319473a5be909  128 bytes  177 us
+warn  2025-05-20T09:37:01.368 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon.test add``:
+fucli --url http://127.0.0.1:8888 push action flon.test add '{"acct": "user2", "messages": ["bbbbbbbbbb", "bbbbbbbbbb"]}' --permission user1@active --permission user2@active
+#     flon.test <= flon.test::add               {"acct":"user2","messages":["bbbbbbbbbb","bbbbbbbbbb"]}
+executed transaction: 7803a138206bf1abbefde01f5ccb8917f764769b8d834dcd30929981f68c4ca1  152 bytes  256 us
+warn  2025-05-20T09:37:01.387 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+多交易多次兑换 7803a138206bf1abbefde01f5ccb8917f764769b8d834dcd30929981f68c4ca1
+fucli --url http://127.0.0.1:8888 get transaction 7803a138206bf1abbefde01f5ccb8917f764769b8d834dcd30929981f68c4ca1
+{
+  "id": "7803a138206bf1abbefde01f5ccb8917f764769b8d834dcd30929981f68c4ca1",
+  "trx": {
+    "receipt": {
+      "status": "executed",
+      "cpu_usage_us": 256,
+      "net_usage_words": 19,
+      "trx": [
+        1,{
+          "signatures": [
+            "SIG_K1_Km3amz3D6aHH4tfbHo2jWaG9F1CLZdKYRqvD8ZdzDouNosvDsvNDjdFNHNwibtmijJsC57AtVaugEy4mgDKmA516W9CcdF",
+            "SIG_K1_Jw3PDzZ9LbbNFDn5QKNeGTLjVdniALsEXa1i4MHAwMFrS3canUsybvwAJDnRUACBR81qrXoZaUVQi5E9hVdZj9Wo5SBVah"
+          ],
+          "compression": "none",
+          "packed_context_free_data": "",
+          "packed_trx": "5b4d2c6819002a2b61c300000000010000c8586530695c00000000000052320200000000807015d600000000a8ed323200000000007115d600000000a8ed32321f00000000007115d6020a626262626262626262620a6262626262626262626200"
+        }
+      ]
+    },
+    "trx": {
+      "expiration": "2025-05-20T09:37:31",
+      "ref_block_num": 25,
+      "ref_block_prefix": 3277925162,
+      "max_net_usage_words": 0,
+      "max_cpu_usage_ms": 0,
+      "delay_sec": 0,
+      "context_free_actions": [],
+      "actions": [{
+          "account": "flon.test",
+          "name": "add",
+          "authorization": [{
+              "actor": "user1",
+              "permission": "active"
+            },{
+              "actor": "user2",
+              "permission": "active"
+            }
+          ],
+          "data": {
+            "acct": "user2",
+            "messages": [
+              "bbbbbbbbbb",
+              "bbbbbbbbbb"
+            ]
+          },
+          "hex_data": "00000000007115d6020a626262626262626262620a62626262626262626262"
+        }
+      ],
+      "transaction_extensions": [],
+      "signatures": [
+        "SIG_K1_Km3amz3D6aHH4tfbHo2jWaG9F1CLZdKYRqvD8ZdzDouNosvDsvNDjdFNHNwibtmijJsC57AtVaugEy4mgDKmA516W9CcdF",
+        "SIG_K1_Jw3PDzZ9LbbNFDn5QKNeGTLjVdniALsEXa1i4MHAwMFrS3canUsybvwAJDnRUACBR81qrXoZaUVQi5E9hVdZj9Wo5SBVah"
+      ],
+      "context_free_data": []
+    }
+  },
+  "block_time": "2025-05-20T09:37:02.000",
+  "block_num": 27,
+  "last_irreversible_block": 25,
+  "traces": [{
+      "action_ordinal": 1,
+      "creator_action_ordinal": 0,
+      "closest_unnotified_ancestor_action_ordinal": 0,
+      "receipt": {
+        "receiver": "flon.test",
+        "act_digest": "ecb5891dcbca2b418a02bd3ba5c2b523a10c6ee945bed9d44a89417b9fae198e",
+        "global_sequence": 100,
+        "recv_sequence": 1,
+        "auth_sequence": [[
+            "user1",
+            1
+          ],[
+            "user2",
+            1
+          ]
+        ],
+        "code_sequence": 1,
+        "abi_sequence": 1
+      },
+      "receiver": "flon.test",
+      "act": {
+        "account": "flon.test",
+        "name": "add",
+        "authorization": [{
+            "actor": "user1",
+            "permission": "active"
+          },{
+            "actor": "user2",
+            "permission": "active"
+          }
+        ],
+        "data": {
+          "acct": "user2",
+          "messages": [
+            "bbbbbbbbbb",
+            "bbbbbbbbbb"
+          ]
+        },
+        "hex_data": "00000000007115d6020a626262626262626262620a62626262626262626262"
+      },
+      "context_free": false,
+      "elapsed": 1072,
+      "console": "",
+      "trx_id": "7803a138206bf1abbefde01f5ccb8917f764769b8d834dcd30929981f68c4ca1",
+      "block_num": 27,
+      "block_time": "2025-05-20T09:37:02.000",
+      "producer_block_id": null,
+      "account_ram_deltas": [{
+          "account": "user2",
+          "delta": 646
+        }
+      ],
+      "except": null,
+      "error_code": null,
+      "return_value_hex_data": ""
+    }
+  ],
+  "res_usage": {
+    "payer": "user1",
+    "net_usage": 152,
+    "net_gas": 7600,
+    "cpu_usage": 256,
+    "cpu_gas": 2560
+  },
+  "gas_traces": [{
+      "account": "user1",
+      "reserved_gas_before": 9857350,
+      "reserved_gas_after": 9847190,
+      "used_gas": 10160,
+      "converted_gas": 0,
+      "ram_gas_delta": {
+        "ram_delta": 0,
+        "gas_delta": 0
+      }
+    },{
+      "account": "user2",
+      "reserved_gas_before": 0,
+      "reserved_gas_after": 0,
+      "used_gas": 32300,
+      "converted_gas": 32300,
+      "ram_gas_delta": {
+        "ram_delta": 646,
+        "gas_delta": -32300
+      }
+    }
+  ]
+}
+
+
+assert user2 SUB: -32300
+* push action ``flon.test add``:
+fucli --url http://127.0.0.1:8888 push action flon.test add '{"acct": "user2", "messages": ["bbbbbbbbbb", "bbbbbbbbbb", "bbbbbbbbbb"]}' --permission user1@active --permission user2@active
+#     flon.test <= flon.test::add               {"acct":"user2","messages":["bbbbbbbbbb","bbbbbbbbbb","bbbbbbbbbb"]}
+executed transaction: 57459e869d589cdc85c5048193ff938ef613d625b30e7a474a6977e06d2ea2bd  168 bytes  229 us
+warn  2025-05-20T09:37:01.420 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+多交易多次兑换 57459e869d589cdc85c5048193ff938ef613d625b30e7a474a6977e06d2ea2bd
+fucli --url http://127.0.0.1:8888 get transaction 57459e869d589cdc85c5048193ff938ef613d625b30e7a474a6977e06d2ea2bd
+{
+  "id": "57459e869d589cdc85c5048193ff938ef613d625b30e7a474a6977e06d2ea2bd",
+  "trx": {
+    "receipt": {
+      "status": "executed",
+      "cpu_usage_us": 229,
+      "net_usage_words": 21,
+      "trx": [
+        1,{
+          "signatures": [
+            "SIG_K1_KbxgN8BfyyBpmadFFpdCArEeJxS6YCJqCvhZEwkkkjSVSMnXXxq7D1S1hvT4WABVJH4gT58cDwad22jhiQTBQajcw4qn3H",
+            "SIG_K1_KcPsoJ2Nk5Qev5Ff2MNm5SfykbaD7DNwJjCiLATXNVzVQ8AXcaSoxViDgEioj9T6HUY7knR7RpxzAoKkqibHzgFjx6Twn2"
+          ],
+          "compression": "none",
+          "packed_context_free_data": "",
+          "packed_trx": "5b4d2c6819002a2b61c300000000010000c8586530695c00000000000052320200000000807015d600000000a8ed323200000000007115d600000000a8ed32322a00000000007115d6030a626262626262626262620a626262626262626262620a6262626262626262626200"
+        }
+      ]
+    },
+    "trx": {
+      "expiration": "2025-05-20T09:37:31",
+      "ref_block_num": 25,
+      "ref_block_prefix": 3277925162,
+      "max_net_usage_words": 0,
+      "max_cpu_usage_ms": 0,
+      "delay_sec": 0,
+      "context_free_actions": [],
+      "actions": [{
+          "account": "flon.test",
+          "name": "add",
+          "authorization": [{
+              "actor": "user1",
+              "permission": "active"
+            },{
+              "actor": "user2",
+              "permission": "active"
+            }
+          ],
+          "data": {
+            "acct": "user2",
+            "messages": [
+              "bbbbbbbbbb",
+              "bbbbbbbbbb",
+              "bbbbbbbbbb"
+            ]
+          },
+          "hex_data": "00000000007115d6030a626262626262626262620a626262626262626262620a62626262626262626262"
+        }
+      ],
+      "transaction_extensions": [],
+      "signatures": [
+        "SIG_K1_KbxgN8BfyyBpmadFFpdCArEeJxS6YCJqCvhZEwkkkjSVSMnXXxq7D1S1hvT4WABVJH4gT58cDwad22jhiQTBQajcw4qn3H",
+        "SIG_K1_KcPsoJ2Nk5Qev5Ff2MNm5SfykbaD7DNwJjCiLATXNVzVQ8AXcaSoxViDgEioj9T6HUY7knR7RpxzAoKkqibHzgFjx6Twn2"
+      ],
+      "context_free_data": []
+    }
+  },
+  "block_time": "2025-05-20T09:37:02.000",
+  "block_num": 27,
+  "last_irreversible_block": 25,
+  "traces": [{
+      "action_ordinal": 1,
+      "creator_action_ordinal": 0,
+      "closest_unnotified_ancestor_action_ordinal": 0,
+      "receipt": {
+        "receiver": "flon.test",
+        "act_digest": "b53a860a4583725461b68f87b94c514bd4f342b5299d12c2aafbaf427ae8b9e1",
+        "global_sequence": 101,
+        "recv_sequence": 2,
+        "auth_sequence": [[
+            "user1",
+            2
+          ],[
+            "user2",
+            2
+          ]
+        ],
+        "code_sequence": 1,
+        "abi_sequence": 1
+      },
+      "receiver": "flon.test",
+      "act": {
+        "account": "flon.test",
+        "name": "add",
+        "authorization": [{
+            "actor": "user1",
+            "permission": "active"
+          },{
+            "actor": "user2",
+            "permission": "active"
+          }
+        ],
+        "data": {
+          "acct": "user2",
+          "messages": [
+            "bbbbbbbbbb",
+            "bbbbbbbbbb",
+            "bbbbbbbbbb"
+          ]
+        },
+        "hex_data": "00000000007115d6030a626262626262626262620a626262626262626262620a62626262626262626262"
+      },
+      "context_free": false,
+      "elapsed": 70,
+      "console": "",
+      "trx_id": "57459e869d589cdc85c5048193ff938ef613d625b30e7a474a6977e06d2ea2bd",
+      "block_num": 27,
+      "block_time": "2025-05-20T09:37:02.000",
+      "producer_block_id": null,
+      "account_ram_deltas": [{
+          "account": "user2",
+          "delta": 801
+        }
+      ],
+      "except": null,
+      "error_code": null,
+      "return_value_hex_data": ""
+    }
+  ],
+  "res_usage": {
+    "payer": "user1",
+    "net_usage": 168,
+    "net_gas": 8400,
+    "cpu_usage": 229,
+    "cpu_gas": 2290
+  },
+  "gas_traces": [{
+      "account": "user1",
+      "reserved_gas_before": 9847190,
+      "reserved_gas_after": 9836500,
+      "used_gas": 10690,
+      "converted_gas": 0,
+      "ram_gas_delta": {
+        "ram_delta": 0,
+        "gas_delta": 0
+      }
+    },{
+      "account": "user2",
+      "reserved_gas_before": 0,
+      "reserved_gas_after": 0,
+      "used_gas": 40050,
+      "converted_gas": 40050,
+      "ram_gas_delta": {
+        "ram_delta": 801,
+        "gas_delta": -40050
+      }
+    }
+  ]
+}
+
+
+assert user2 SUB: -40050

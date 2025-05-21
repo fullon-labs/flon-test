@@ -1,0 +1,2954 @@
+Local node is stopped [3474972].
+######## nodeos command line:
+funod --http-server-address 0.0.0.0:8888 --chain-state-db-size-mb 1024 --contracts-console --verbose-http-errors --enable-stale-production --producer-name flon --signature-provider FU6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV=KEY:5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3 --plugin eosio::producer_api_plugin --plugin eosio::producer_plugin --plugin eosio::chain_api_plugin --plugin eosio::http_plugin --plugin eosio::state_history_plugin --plugin eosio::history_api_plugin --filter-on=* --disable-replay-opts --delete-all-blocks
+Starting nodeos, cpu percent: 1, 0* 0* 0* 
+Local node is running. Block number is 14
+* Wallet name is ``_127_0_0_1_8888_default``, wallet directory is
+    /root/flon-wallet//.
+* Created wallet ``_127_0_0_1_8888_default``.
+* Password is saved to the file ``_127_0_0_1_8888_passwords.json`` 
+in the wallet directory.
+* The wallet is empty.
+fucli --url http://127.0.0.1:8888 create account flon flon.test FU7RHGcmK4Y2achn7ZGKJJepptizTU1m9ZoqSt6tk8iutiwZN8AM FU7RHGcmK4Y2achn7ZGKJJepptizTU1m9ZoqSt6tk8iutiwZN8AM
+flon.test
+
+
+fucli --url http://127.0.0.1:8888 create account flon flon.bpay FU7EzzKZjGBoY8o6Yqct3JqLrftLmG8UYUd5pgFwoFANRPsRfjJA FU7EzzKZjGBoY8o6Yqct3JqLrftLmG8UYUd5pgFwoFANRPsRfjJA
+flon.bpay
+
+
+fucli --url http://127.0.0.1:8888 create account flon flon.msig FU5Fnh3d7D7anjvrBzXxtkRJGXGHnK4Weim2HeWnrHcMypmxEZS8 FU5Fnh3d7D7anjvrBzXxtkRJGXGHnK4Weim2HeWnrHcMypmxEZS8
+flon.msig
+
+
+fucli --url http://127.0.0.1:8888 create account flon flon.names FU7NwkdG8NbhC4628sBbEmKCwotnH7dZySAfaM9f37oxfFaciwSE FU7NwkdG8NbhC4628sBbEmKCwotnH7dZySAfaM9f37oxfFaciwSE
+flon.names
+
+
+fucli --url http://127.0.0.1:8888 create account flon flon.fees FU59qj3hr8qhDGvgAJHnVpk6oAnKwgivur76qTfW1KGvrR1eQM1u FU59qj3hr8qhDGvgAJHnVpk6oAnKwgivur76qTfW1KGvrR1eQM1u
+flon.fees
+
+
+fucli --url http://127.0.0.1:8888 create account flon flon.stake FU6AQANxbiqzvPRc3igVEuusj1gFGS6ASWbN2PujSDd11XMwqwZQ FU6AQANxbiqzvPRc3igVEuusj1gFGS6ASWbN2PujSDd11XMwqwZQ
+flon.stake
+
+
+fucli --url http://127.0.0.1:8888 create account flon flon.token FU6d9PUhS7Emkt6s1hZrSmyG983oAP4jAyzsq4494GUddEHpSC6D FU6d9PUhS7Emkt6s1hZrSmyG983oAP4jAyzsq4494GUddEHpSC6D
+flon.token
+
+
+fucli --url http://127.0.0.1:8888 create account flon flon.reward FU7cBxHjm4wSKgAyTQL5ntk6pRqHqikzGHfVaDcHWwWzA8pV4ytK FU7cBxHjm4wSKgAyTQL5ntk6pRqHqikzGHfVaDcHWwWzA8pV4ytK
+flon.reward
+
+
+fucli --url http://127.0.0.1:8888 create account flon flon.vote FU6s3pvjUzh96LprXEKRmZ3WVBkTnCvGvosaBK5KwMaRoLqWfeeW FU6s3pvjUzh96LprXEKRmZ3WVBkTnCvGvosaBK5KwMaRoLqWfeeW
+flon.vote
+
+
+fucli --url http://127.0.0.1:8888 create account flon flon.evm FU8Dd9HsHTUfDd4EwawScZijo5buacc768MS1x1gae1Gw4Mz2SwZ FU8Dd9HsHTUfDd4EwawScZijo5buacc768MS1x1gae1Gw4Mz2SwZ
+flon.evm
+
+
+fucli --url http://127.0.0.1:8888 create account flon evm.miner FU4tz1YquuVAs815VB97xVj8DqTzUZwMff1J8fjShyXy1eGRb4VQ FU4tz1YquuVAs815VB97xVj8DqTzUZwMff1J8fjShyXy1eGRb4VQ
+evm.miner
+
+
+fucli --url http://127.0.0.1:8888 create account flon test FU5fyePumsjvTiwD5ypbVHQX9Fo6ffpX6vaq3b9c56LaHoNSUPLV FU5fyePumsjvTiwD5ypbVHQX9Fo6ffpX6vaq3b9c56LaHoNSUPLV
+test
+
+
+{"result":"ok"}
+5032
+* Contract /root/contracts/flon-core-test/gastest flon
+    is deployed.
+fucli --url http://127.0.0.1:8888 set account permission flon active --add-code
+#          flon <= flon::updateauth             {"account":"flon","permission":"active","parent":"owner","auth":{"threshold":1,"keys":[{"key":"FU6MR...
+executed transaction: 029171f9deff9bebf99585ba40710180d738ab4dfac0083fd8343e3d4dc82a5d  184 bytes  139 us
+warn  2025-05-20T12:00:56.290 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* account permission ``None``:
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "c3a6138c5061cf291310887c0b5c71fcaffeab90d5deb50d3b9e687cead45071"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"c3a6138c5061cf291310887c0b5c71fcaffeab90d5deb50d3b9e687cead45071"}
+executed transaction: 39f461df8d8fee267c1b7145ed83daffc5c32e07ef9bec4c24240e3b42d5c341  128 bytes  140 us
+warn  2025-05-20T12:00:56.307 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "d528b9f6e9693f45ed277af93474fd473ce7d831dae2180cca35d907bd10cb40"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"d528b9f6e9693f45ed277af93474fd473ce7d831dae2180cca35d907bd10cb40"}
+executed transaction: ded4e9ef95d4825ba0431dbf0b99ccde8fc471ba14365c0edb3d08b0ea923401  128 bytes  133 us
+warn  2025-05-20T12:00:56.325 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "5443fcf88330c586bc0e5f3dee10e7f63c76c00249c87fe4fbf7f38c082006b4"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"5443fcf88330c586bc0e5f3dee10e7f63c76c00249c87fe4fbf7f38c082006b4"}
+executed transaction: 6fcf73de250e48c0e6da08a8be57b011ea7e5c2fe4446f714eb3c4d7d4b2a07f  128 bytes  125 us
+warn  2025-05-20T12:00:56.343 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "f0af56d2c5a48d60a4a5b5c903edfb7db3a736a94ed589d0b797df33ff9d3e1d"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"f0af56d2c5a48d60a4a5b5c903edfb7db3a736a94ed589d0b797df33ff9d3e1d"}
+executed transaction: 70daa6fd70abbd47d2b1e409efbcdf9337e9810af9bc2f7effd8989020acd26d  128 bytes  123 us
+warn  2025-05-20T12:00:56.360 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "2652f5f96006294109b3dd0bbde63693f55324af452b799ee137a81a905eed25"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"2652f5f96006294109b3dd0bbde63693f55324af452b799ee137a81a905eed25"}
+executed transaction: 3e86e46abba05a53ebf23bac9b2e0658b7528fbde3fa2544083632c6d27584b6  128 bytes  121 us
+warn  2025-05-20T12:00:56.377 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "8ba52fe7a3956c5cd3a656a3174b931d3bb2abb45578befc59f283ecd816a405"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"8ba52fe7a3956c5cd3a656a3174b931d3bb2abb45578befc59f283ecd816a405"}
+executed transaction: 01bda6291b9475b8832a740a771328410491a73225772b8a40b58a7a48bfbb04  128 bytes  120 us
+warn  2025-05-20T12:00:56.394 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "ad9e3d8f650687709fd68f4b90b41f7d825a365b02c23a636cef88ac2ac00c43"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"ad9e3d8f650687709fd68f4b90b41f7d825a365b02c23a636cef88ac2ac00c43"}
+executed transaction: 4dd26aa528cfeba06d137c372238164bdd6daab057068b43ac6a0f3cfc16df73  128 bytes  127 us
+warn  2025-05-20T12:00:56.411 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "68dcaa34c0517d19666e6b33add67351d8c5f69e999ca1e37931bc410a297428"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"68dcaa34c0517d19666e6b33add67351d8c5f69e999ca1e37931bc410a297428"}
+executed transaction: d889a72b3db4da96993d1b1287ec666ae1e408f57ed0291a0ef096b1fef3f1f2  128 bytes  139 us
+warn  2025-05-20T12:00:56.428 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "e0fb64b1085cc5538970158d05a009c24e276fb94e1a0bf6a528b48fbc4ff526"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"e0fb64b1085cc5538970158d05a009c24e276fb94e1a0bf6a528b48fbc4ff526"}
+executed transaction: 2d4248b68a52eb9f9b84c9049ee3091f75844ae180ad4f1ada08864429b14701  128 bytes  135 us
+warn  2025-05-20T12:00:56.445 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "1a99a59d87e06e09ec5b028a9cbb7749b4a5ad8819004365d02dc4379a8b7241"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"1a99a59d87e06e09ec5b028a9cbb7749b4a5ad8819004365d02dc4379a8b7241"}
+executed transaction: 44efd86f0005fea852fe9806d75c70493873d40b2aeae246a2463c58127bbd2f  128 bytes  141 us
+warn  2025-05-20T12:00:56.462 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "4e7bf348da00a945489b2a681749eb56f5de00b900014e137ddae39f48f69d67"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"4e7bf348da00a945489b2a681749eb56f5de00b900014e137ddae39f48f69d67"}
+executed transaction: 5403299df15f9d05b93d805ba7450801722daaf6a2fe44b35bce7f2977d46986  128 bytes  134 us
+warn  2025-05-20T12:00:56.480 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "4fca8bd82bbd181e714e283f83e1b45d95ca5af40fb89ad3977b653c448f78c2"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"4fca8bd82bbd181e714e283f83e1b45d95ca5af40fb89ad3977b653c448f78c2"}
+executed transaction: 25440321f69d1f02506961107844b5fce4148d6f7ca0ba9832af3d721721e9a3  128 bytes  135 us
+warn  2025-05-20T12:00:56.498 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "299dcb6af692324b899b39f16d5a530a33062804e41f09dc97e9f156b4476707"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"299dcb6af692324b899b39f16d5a530a33062804e41f09dc97e9f156b4476707"}
+executed transaction: 4c2d5f79971887292ecdbd50a98d8909cf0ce5dbbc7c11490bfe853715c9ae29  128 bytes  131 us
+warn  2025-05-20T12:00:56.515 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "bcd2a26394b36614fd4894241d3c451ab0f6fd110958c3423073621a70826e99"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"bcd2a26394b36614fd4894241d3c451ab0f6fd110958c3423073621a70826e99"}
+executed transaction: 4f67fe132dce9e78ece51e65acba0a17ecccf9278bd678c0fcc998a997b34b89  128 bytes  139 us
+warn  2025-05-20T12:00:56.533 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "35c2186cc36f7bb4aeaf4487b36e57039ccf45a9136aa856a5d569ecca55ef2b"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"35c2186cc36f7bb4aeaf4487b36e57039ccf45a9136aa856a5d569ecca55ef2b"}
+executed transaction: 811567e9ec7d0f1ba9513ea9f17d7a676fdcc9c4dfcd8eacee8f06c624567770  128 bytes  131 us
+warn  2025-05-20T12:00:56.550 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "6bcb40a24e49c26d0a60513b6aeb8551d264e4717f306b81a37a5afb3b47cedc"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"6bcb40a24e49c26d0a60513b6aeb8551d264e4717f306b81a37a5afb3b47cedc"}
+executed transaction: 381624e3729c5cfb1418ddc5e05bdf5d2a8030c445593e7804cb50160be6ca79  128 bytes  126 us
+warn  2025-05-20T12:00:56.567 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "63320dd4a58212e4d32d1f58926b73ca33a247326c2a5e9fd39268d2384e011a"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"63320dd4a58212e4d32d1f58926b73ca33a247326c2a5e9fd39268d2384e011a"}
+executed transaction: d5a5c34a6e9683831b9212c5af3f0580266cc224a2f9c090f03e6629f8b3ab53  128 bytes  122 us
+warn  2025-05-20T12:00:56.585 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon activate``:
+fucli --url http://127.0.0.1:8888 push action flon activate '{"feature_digest": "72df75c0bf7fce15d7b95d8565eba38ff58231789273d39c68693c3557d64c54"}' --permission flon@active
+#          flon <= flon::activate               {"feature_digest":"72df75c0bf7fce15d7b95d8565eba38ff58231789273d39c68693c3557d64c54"}
+executed transaction: d5baac242aae93e641c15b12331c2aa7b04a00b6a0ab1f30829d6a06a94e320e  128 bytes  145 us
+warn  2025-05-20T12:00:56.602 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+34322
+* Contract /root/contracts/flon-core-test/gastest flon.reward
+    is deployed.
+fucli --url http://127.0.0.1:8888 set account permission flon.reward active --add-code
+#          flon <= flon::updateauth             {"account":"flon.reward","permission":"active","parent":"owner","auth":{"threshold":1,"keys":[{"key"...
+executed transaction: dfcccc9bc78b71dcca121c4e48239d0e57cf12ffe03bc0e5e9b93fe806853d37  184 bytes  129 us
+warn  2025-05-20T12:00:56.813 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* account permission ``None``:
+35256
+* Contract /root/contracts/flon-core-test/gastest flon.msig
+    is deployed.
+fucli --url http://127.0.0.1:8888 set account permission flon.msig active --add-code
+#          flon <= flon::updateauth             {"account":"flon.msig","permission":"active","parent":"owner","auth":{"threshold":1,"keys":[{"key":"...
+executed transaction: 7dc3cfb0ec8c6c3153e0d724d2089b473a54bf14c45e027f36b6eafc97634a96  184 bytes  125 us
+warn  2025-05-20T12:00:57.019 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* account permission ``None``:
+16304
+* Contract /root/contracts/flon-core-test/gastest flon.token
+    is deployed.
+fucli --url http://127.0.0.1:8888 set account permission flon.token active --add-code
+#          flon <= flon::updateauth             {"account":"flon.token","permission":"active","parent":"owner","auth":{"threshold":1,"keys":[{"key":...
+executed transaction: 3ab995eb7b94fe2be9faf22a95da07076c2fd2393178c2c2852d61160a19b6c9  184 bytes  105 us
+warn  2025-05-20T12:00:57.211 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* account permission ``None``:
+fucli --url http://127.0.0.1:8888 create account flon admin FU7jAkq1WKN5xQZPdGHsoQswSFGid9QMeQux8FJs4UTnkVYUur6v FU7jAkq1WKN5xQZPdGHsoQswSFGid9QMeQux8FJs4UTnkVYUur6v
+admin
+
+
+* push action ``flon.token create``:
+fucli --url http://127.0.0.1:8888 push action flon.token create '{"issuer": "admin", "maximum_supply": "10000000000.00000000 FLON"}' --permission flon.token@active
+#    flon.token <= flon.token::create           {"issuer":"admin","maximum_supply":"10000000000.00000000 FLON"}
+executed transaction: 20f64a9ef4f4f83fbc48a1007adf386067b84fabfcfa90453c6f1424e88700b0  120 bytes  157 us
+warn  2025-05-20T12:00:57.410 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon.token issue``:
+fucli --url http://127.0.0.1:8888 push action flon.token issue '{"to": "admin", "quantity": "10000000000.00000000 FLON", "memo": ""}' --permission admin@active
+#    flon.token <= flon.token::issue            {"to":"admin","quantity":"10000000000.00000000 FLON","memo":""}
+executed transaction: cd550feb8cf683439ec53ad42ade447100a41ec96c5b5137914c049def7a0337  120 bytes  198 us
+warn  2025-05-20T12:00:57.427 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+65414
+* Contract /root/contracts/flon-core-test/gastest flon
+    is deployed.
+fucli --url http://127.0.0.1:8888 set account permission flon active --add-code
+set_account_permission error
+* account permission ``None``:
+* push action ``flon init``:
+fucli --url http://127.0.0.1:8888 push action flon init '{"version": 0, "core": "8,FLON"}' --permission flon@active
+#          flon <= flon::init                   {"version":0,"core":"8,FLON"}
+#    flon.token <= flon.token::open             {"owner":"flon.gas","symbol":"8,FLON","ram_payer":"flon"}
+executed transaction: 5607a41c9379908806d819b40b3e10e9547e7683633c3a89beb9013717ab5108  104 bytes  159 us
+warn  2025-05-20T12:00:57.665 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon.token transfer``:
+fucli --url http://127.0.0.1:8888 push action flon.token transfer '{"from": "admin", "to": "flon", "quantity": "100000000.00000000 FLON", "memo": ""}' --permission admin@active
+#    flon.token <= flon.token::transfer         {"from":"admin","to":"flon","quantity":"100000000.00000000 FLON","memo":""}
+#         admin <= flon.token::transfer         {"from":"admin","to":"flon","quantity":"100000000.00000000 FLON","memo":""}
+#          flon <= flon.token::transfer         {"from":"admin","to":"flon","quantity":"100000000.00000000 FLON","memo":""}
+executed transaction: 470f3b661cc16ddfa66d4078135f5142fb016f5d79b60adb0d0837f00dc0a232  128 bytes  188 us
+warn  2025-05-20T12:00:57.728 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+fucli --url http://127.0.0.1:8888 system newaccount flon first FU6sibcd5XciH1XCKmYCQoxovTwmPM8DNreU73CYEG7FEhuDVbKs FU6sibcd5XciH1XCKmYCQoxovTwmPM8DNreU73CYEG7FEhuDVbKs --json --fund-gas 0.00148250 FLON
+first
+29282
+* Contract /root/contracts/flon-core-test/gastest flon.test
+    is deployed.
+fucli --url http://127.0.0.1:8888 set account permission flon.test active --add-code
+#          flon <= flon::updateauth             {"account":"flon.test","permission":"active","parent":"owner","auth":{"threshold":1,"keys":[{"key":"...
+executed transaction: e17fce9d4d064f15dc84493f6ee68c19ce2e2ac1cc278f2184c090b778e89849  184 bytes  141 us
+warn  2025-05-20T12:00:58.210 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* account permission ``None``:
+fucli --url http://127.0.0.1:8888 system newaccount flon usera FU82H9vVMHuDQps7gsZBUgXEyHxJk5dXeYkto3iGvJKPgwjXKWqz FU82H9vVMHuDQps7gsZBUgXEyHxJk5dXeYkto3iGvJKPgwjXKWqz --json --fund-gas 0.00142650 FLON
+usera
+fucli --url http://127.0.0.1:8888 system newaccount flon userb FU5EU1KC6qCrchwv1wCfpdMXe4YCwagjYWwQGDL9oLyfwm9xsWM3 FU5EU1KC6qCrchwv1wCfpdMXe4YCwagjYWwQGDL9oLyfwm9xsWM3 --json --fund-gas 0.00142650 FLON
+userb
+* push action ``flon.token transfer``:
+fucli --url http://127.0.0.1:8888 push action flon.token transfer '{"from": "admin", "to": "usera", "quantity": "1.00000000 FLON", "memo": ""}' --permission admin@active
+#    flon.token <= flon.token::transfer         {"from":"admin","to":"usera","quantity":"1.00000000 FLON","memo":""}
+#         admin <= flon.token::transfer         {"from":"admin","to":"usera","quantity":"1.00000000 FLON","memo":""}
+#         usera <= flon.token::transfer         {"from":"admin","to":"usera","quantity":"1.00000000 FLON","memo":""}
+executed transaction: 0c09d70914cb8cdd82abf90560ad39c32fc990652f305d062dcdc02a9f9a9a00  128 bytes  187 us
+warn  2025-05-20T12:00:58.679 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+65414
+* Contract /root/contracts/flon-core-test/gastest flon
+    is deployed.
+fucli --url http://127.0.0.1:8888 set account permission flon active --add-code
+set_account_permission error
+* account permission ``None``:
+* push action ``flon setparams``:
+fucli --url http://127.0.0.1:8888 push action flon setparams '{"params": '{"max_block_net_usage": 1048576, "target_block_net_usage_pct": 1000, "max_transaction_net_usage": 524288, "base_per_transaction_net_usage": 12, "net_usage_leeway": 500, "context_free_discount_net_usage_num": 20, "context_free_discount_net_usage_den": 100, "max_block_cpu_usage": 200000, "target_block_cpu_usage_pct": 10000, "max_transaction_cpu_usage": 150000, "min_transaction_cpu_usage": 100, "max_transaction_lifetime": 3600, "deferred_trx_expiration_window": 600, "max_transaction_delay": 3888000, "max_inline_action_size": 4096, "max_inline_action_depth": 4, "max_authority_depth": 6, "max_total_ram_usage": 10485760, "gas_per_cpu_ms": 1000, "gas_per_net_kb": 0, "gas_per_ram_kb": 0}'}' --permission flon@active
+#          flon <= flon::setparams              {"params":{"max_block_net_usage":1048576,"target_block_net_usage_pct":1000,"max_transaction_net_usag...
+executed transaction: 67bda373c61d9b4fd9d5d551360d07ab20a55e8a24850391b9ba4cadc313f303  184 bytes  186 us
+warn  2025-05-20T12:00:58.873 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon.test add``:
+fucli --url http://127.0.0.1:8888 push action flon.test add '{"acct": "usera", "messages": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99"]}' --permission usera@active
+#     flon.test <= flon.test::add               {"acct":"usera","messages":["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","1...
+executed transaction: 1ee88fd0485c5a71c628e464925fdb91d0f3ecf7597ba67965387f979173b423  392 bytes  662 us
+warn  2025-05-20T12:01:00.896 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+fucli --url http://127.0.0.1:8888 get transaction 1ee88fd0485c5a71c628e464925fdb91d0f3ecf7597ba67965387f979173b423
+{
+  "id": "1ee88fd0485c5a71c628e464925fdb91d0f3ecf7597ba67965387f979173b423",
+  "trx": {
+    "receipt": {
+      "status": "executed",
+      "cpu_usage_us": 662,
+      "net_usage_words": 49,
+      "trx": [
+        1,{
+          "signatures": [
+            "SIG_K1_KbZeoRjevDXjfR41Hrbvd4UmVSqoBZ1YFYH8fkg8VUJKiuGPYPczQ1TjH7WM5PbruLpQ8LawLFqEGVPDSaTQrLvMJXUA7R"
+          ],
+          "compression": "none",
+          "packed_context_free_data": "",
+          "packed_trx": "1b6f2c681e00042a8a0800000000010000c8586530695c00000000000052320100000000007315d600000000a8ed3232ab0200000000007315d664013001310132013301340135013601370138013902313002313102313202313302313402313502313602313702313802313902323002323102323202323302323402323502323602323702323802323902333002333102333202333302333402333502333602333702333802333902343002343102343202343302343402343502343602343702343802343902353002353102353202353302353402353502353602353702353802353902363002363102363202363302363402363502363602363702363802363902373002373102373202373302373402373502373602373702373802373902383002383102383202383302383402383502383602383702383802383902393002393102393202393302393402393502393602393702393802393900"
+        }
+      ]
+    },
+    "trx": {
+      "expiration": "2025-05-20T12:01:31",
+      "ref_block_num": 30,
+      "ref_block_prefix": 143272452,
+      "max_net_usage_words": 0,
+      "max_cpu_usage_ms": 0,
+      "delay_sec": 0,
+      "context_free_actions": [],
+      "actions": [{
+          "account": "flon.test",
+          "name": "add",
+          "authorization": [{
+              "actor": "usera",
+              "permission": "active"
+            }
+          ],
+          "data": {
+            "acct": "usera",
+            "messages": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "39",
+              "40",
+              "41",
+              "42",
+              "43",
+              "44",
+              "45",
+              "46",
+              "47",
+              "48",
+              "49",
+              "50",
+              "51",
+              "52",
+              "53",
+              "54",
+              "55",
+              "56",
+              "57",
+              "58",
+              "59",
+              "60",
+              "61",
+              "62",
+              "63",
+              "64",
+              "65",
+              "66",
+              "67",
+              "68",
+              "69",
+              "70",
+              "71",
+              "72",
+              "73",
+              "74",
+              "75",
+              "76",
+              "77",
+              "78",
+              "79",
+              "80",
+              "81",
+              "82",
+              "83",
+              "84",
+              "85",
+              "86",
+              "87",
+              "88",
+              "89",
+              "90",
+              "91",
+              "92",
+              "93",
+              "94",
+              "95",
+              "96",
+              "97",
+              "98",
+              "99"
+            ]
+          },
+          "hex_data": "00000000007315d6640130013101320133013401350136013701380139023130023131023132023133023134023135023136023137023138023139023230023231023232023233023234023235023236023237023238023239023330023331023332023333023334023335023336023337023338023339023430023431023432023433023434023435023436023437023438023439023530023531023532023533023534023535023536023537023538023539023630023631023632023633023634023635023636023637023638023639023730023731023732023733023734023735023736023737023738023739023830023831023832023833023834023835023836023837023838023839023930023931023932023933023934023935023936023937023938023939"
+        }
+      ],
+      "transaction_extensions": [],
+      "signatures": [
+        "SIG_K1_KbZeoRjevDXjfR41Hrbvd4UmVSqoBZ1YFYH8fkg8VUJKiuGPYPczQ1TjH7WM5PbruLpQ8LawLFqEGVPDSaTQrLvMJXUA7R"
+      ],
+      "context_free_data": []
+    }
+  },
+  "block_time": "2025-05-20T12:01:01.500",
+  "block_num": 32,
+  "last_irreversible_block": 30,
+  "traces": [{
+      "action_ordinal": 1,
+      "creator_action_ordinal": 0,
+      "closest_unnotified_ancestor_action_ordinal": 0,
+      "receipt": {
+        "receiver": "flon.test",
+        "act_digest": "dc4685f25d4cb0f6fe8a9e33c2a9fca21e029523bdbde66a3fc56730e5233447",
+        "global_sequence": 106,
+        "recv_sequence": 1,
+        "auth_sequence": [[
+            "usera",
+            1
+          ]
+        ],
+        "code_sequence": 1,
+        "abi_sequence": 1
+      },
+      "receiver": "flon.test",
+      "act": {
+        "account": "flon.test",
+        "name": "add",
+        "authorization": [{
+            "actor": "usera",
+            "permission": "active"
+          }
+        ],
+        "data": {
+          "acct": "usera",
+          "messages": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99"
+          ]
+        },
+        "hex_data": "00000000007315d6640130013101320133013401350136013701380139023130023131023132023133023134023135023136023137023138023139023230023231023232023233023234023235023236023237023238023239023330023331023332023333023334023335023336023337023338023339023430023431023432023433023434023435023436023437023438023439023530023531023532023533023534023535023536023537023538023539023630023631023632023633023634023635023636023637023638023639023730023731023732023733023734023735023736023737023738023739023830023831023832023833023834023835023836023837023838023839023930023931023932023933023934023935023936023937023938023939"
+      },
+      "context_free": false,
+      "elapsed": 1795,
+      "console": "",
+      "trx_id": "1ee88fd0485c5a71c628e464925fdb91d0f3ecf7597ba67965387f979173b423",
+      "block_num": 32,
+      "block_time": "2025-05-20T12:01:01.500",
+      "producer_block_id": null,
+      "account_ram_deltas": [{
+          "account": "usera",
+          "delta": 26002
+        }
+      ],
+      "except": null,
+      "error_code": null,
+      "return_value_hex_data": ""
+    }
+  ],
+  "res_usage": {
+    "payer": "usera",
+    "net_usage": 392,
+    "net_gas": 0,
+    "cpu_usage": 662,
+    "cpu_gas": 662
+  },
+  "gas_traces": [{
+      "account": "usera",
+      "reserved_gas_before": 0,
+      "reserved_gas_after": 0,
+      "used_gas": 662,
+      "converted_gas": 662,
+      "ram_gas_delta": {
+        "ram_delta": 26002,
+        "gas_delta": 0
+      }
+    }
+  ]
+}
+
+
+fucli --url http://127.0.0.1:8888 get transaction 1ee88fd0485c5a71c628e464925fdb91d0f3ecf7597ba67965387f979173b423
+{
+  "id": "1ee88fd0485c5a71c628e464925fdb91d0f3ecf7597ba67965387f979173b423",
+  "trx": {
+    "receipt": {
+      "status": "executed",
+      "cpu_usage_us": 662,
+      "net_usage_words": 49,
+      "trx": [
+        1,{
+          "signatures": [
+            "SIG_K1_KbZeoRjevDXjfR41Hrbvd4UmVSqoBZ1YFYH8fkg8VUJKiuGPYPczQ1TjH7WM5PbruLpQ8LawLFqEGVPDSaTQrLvMJXUA7R"
+          ],
+          "compression": "none",
+          "packed_context_free_data": "",
+          "packed_trx": "1b6f2c681e00042a8a0800000000010000c8586530695c00000000000052320100000000007315d600000000a8ed3232ab0200000000007315d664013001310132013301340135013601370138013902313002313102313202313302313402313502313602313702313802313902323002323102323202323302323402323502323602323702323802323902333002333102333202333302333402333502333602333702333802333902343002343102343202343302343402343502343602343702343802343902353002353102353202353302353402353502353602353702353802353902363002363102363202363302363402363502363602363702363802363902373002373102373202373302373402373502373602373702373802373902383002383102383202383302383402383502383602383702383802383902393002393102393202393302393402393502393602393702393802393900"
+        }
+      ]
+    },
+    "trx": {
+      "expiration": "2025-05-20T12:01:31",
+      "ref_block_num": 30,
+      "ref_block_prefix": 143272452,
+      "max_net_usage_words": 0,
+      "max_cpu_usage_ms": 0,
+      "delay_sec": 0,
+      "context_free_actions": [],
+      "actions": [{
+          "account": "flon.test",
+          "name": "add",
+          "authorization": [{
+              "actor": "usera",
+              "permission": "active"
+            }
+          ],
+          "data": {
+            "acct": "usera",
+            "messages": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "39",
+              "40",
+              "41",
+              "42",
+              "43",
+              "44",
+              "45",
+              "46",
+              "47",
+              "48",
+              "49",
+              "50",
+              "51",
+              "52",
+              "53",
+              "54",
+              "55",
+              "56",
+              "57",
+              "58",
+              "59",
+              "60",
+              "61",
+              "62",
+              "63",
+              "64",
+              "65",
+              "66",
+              "67",
+              "68",
+              "69",
+              "70",
+              "71",
+              "72",
+              "73",
+              "74",
+              "75",
+              "76",
+              "77",
+              "78",
+              "79",
+              "80",
+              "81",
+              "82",
+              "83",
+              "84",
+              "85",
+              "86",
+              "87",
+              "88",
+              "89",
+              "90",
+              "91",
+              "92",
+              "93",
+              "94",
+              "95",
+              "96",
+              "97",
+              "98",
+              "99"
+            ]
+          },
+          "hex_data": "00000000007315d6640130013101320133013401350136013701380139023130023131023132023133023134023135023136023137023138023139023230023231023232023233023234023235023236023237023238023239023330023331023332023333023334023335023336023337023338023339023430023431023432023433023434023435023436023437023438023439023530023531023532023533023534023535023536023537023538023539023630023631023632023633023634023635023636023637023638023639023730023731023732023733023734023735023736023737023738023739023830023831023832023833023834023835023836023837023838023839023930023931023932023933023934023935023936023937023938023939"
+        }
+      ],
+      "transaction_extensions": [],
+      "signatures": [
+        "SIG_K1_KbZeoRjevDXjfR41Hrbvd4UmVSqoBZ1YFYH8fkg8VUJKiuGPYPczQ1TjH7WM5PbruLpQ8LawLFqEGVPDSaTQrLvMJXUA7R"
+      ],
+      "context_free_data": []
+    }
+  },
+  "block_time": "2025-05-20T12:01:01.500",
+  "block_num": 32,
+  "last_irreversible_block": 30,
+  "traces": [{
+      "action_ordinal": 1,
+      "creator_action_ordinal": 0,
+      "closest_unnotified_ancestor_action_ordinal": 0,
+      "receipt": {
+        "receiver": "flon.test",
+        "act_digest": "dc4685f25d4cb0f6fe8a9e33c2a9fca21e029523bdbde66a3fc56730e5233447",
+        "global_sequence": 106,
+        "recv_sequence": 1,
+        "auth_sequence": [[
+            "usera",
+            1
+          ]
+        ],
+        "code_sequence": 1,
+        "abi_sequence": 1
+      },
+      "receiver": "flon.test",
+      "act": {
+        "account": "flon.test",
+        "name": "add",
+        "authorization": [{
+            "actor": "usera",
+            "permission": "active"
+          }
+        ],
+        "data": {
+          "acct": "usera",
+          "messages": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99"
+          ]
+        },
+        "hex_data": "00000000007315d6640130013101320133013401350136013701380139023130023131023132023133023134023135023136023137023138023139023230023231023232023233023234023235023236023237023238023239023330023331023332023333023334023335023336023337023338023339023430023431023432023433023434023435023436023437023438023439023530023531023532023533023534023535023536023537023538023539023630023631023632023633023634023635023636023637023638023639023730023731023732023733023734023735023736023737023738023739023830023831023832023833023834023835023836023837023838023839023930023931023932023933023934023935023936023937023938023939"
+      },
+      "context_free": false,
+      "elapsed": 1795,
+      "console": "",
+      "trx_id": "1ee88fd0485c5a71c628e464925fdb91d0f3ecf7597ba67965387f979173b423",
+      "block_num": 32,
+      "block_time": "2025-05-20T12:01:01.500",
+      "producer_block_id": null,
+      "account_ram_deltas": [{
+          "account": "usera",
+          "delta": 26002
+        }
+      ],
+      "except": null,
+      "error_code": null,
+      "return_value_hex_data": ""
+    }
+  ],
+  "res_usage": {
+    "payer": "usera",
+    "net_usage": 392,
+    "net_gas": 0,
+    "cpu_usage": 662,
+    "cpu_gas": 662
+  },
+  "gas_traces": [{
+      "account": "usera",
+      "reserved_gas_before": 0,
+      "reserved_gas_after": 0,
+      "used_gas": 662,
+      "converted_gas": 662,
+      "ram_gas_delta": {
+        "ram_delta": 26002,
+        "gas_delta": 0
+      }
+    }
+  ]
+}
+
+
+* push action ``flon setparams``:
+fucli --url http://127.0.0.1:8888 push action flon setparams '{"params": '{"max_block_net_usage": 1048576, "target_block_net_usage_pct": 1000, "max_transaction_net_usage": 524288, "base_per_transaction_net_usage": 12, "net_usage_leeway": 500, "context_free_discount_net_usage_num": 20, "context_free_discount_net_usage_den": 100, "max_block_cpu_usage": 200000, "target_block_cpu_usage_pct": 10000, "max_transaction_cpu_usage": 150000, "min_transaction_cpu_usage": 100, "max_transaction_lifetime": 3600, "deferred_trx_expiration_window": 600, "max_transaction_delay": 3888000, "max_inline_action_size": 4096, "max_inline_action_depth": 4, "max_authority_depth": 6, "max_total_ram_usage": 10485760, "gas_per_cpu_ms": 1000, "gas_per_net_kb": 1000, "gas_per_ram_kb": 0}'}' --permission flon@active
+#          flon <= flon::setparams              {"params":{"max_block_net_usage":1048576,"target_block_net_usage_pct":1000,"max_transaction_net_usag...
+executed transaction: 5bbaa8c3e36a5d7f595788e2abd52cc2863b13e2c6e272a88cfa1d8e90d12d9e  184 bytes  188 us
+warn  2025-05-20T12:01:00.945 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon.test add``:
+fucli --url http://127.0.0.1:8888 push action flon.test add '{"acct": "usera", "messages": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99"]}' --permission usera@active
+#     flon.test <= flon.test::add               {"acct":"usera","messages":["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","1...
+executed transaction: 76c0dc5493d3ef0121c16a67b2892547c390fbf1f841ccc783e3f61260e755f0  392 bytes  644 us
+warn  2025-05-20T12:01:02.965 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+fucli --url http://127.0.0.1:8888 get transaction 76c0dc5493d3ef0121c16a67b2892547c390fbf1f841ccc783e3f61260e755f0
+{
+  "id": "76c0dc5493d3ef0121c16a67b2892547c390fbf1f841ccc783e3f61260e755f0",
+  "trx": {
+    "receipt": {
+      "status": "executed",
+      "cpu_usage_us": 644,
+      "net_usage_words": 49,
+      "trx": [
+        1,{
+          "signatures": [
+            "SIG_K1_K4a3PDDMzRrr6ci72KNje7YKEEGdxHXmXvU8DENFoMBuDeLDR65g1vm7sST1pLymBstkGupoM8qc4b11sMcyHv2hjrCHr3"
+          ],
+          "compression": "none",
+          "packed_context_free_data": "",
+          "packed_trx": "1d6f2c682200f0ac307f00000000010000c8586530695c00000000000052320100000000007315d600000000a8ed3232ab0200000000007315d664013001310132013301340135013601370138013902313002313102313202313302313402313502313602313702313802313902323002323102323202323302323402323502323602323702323802323902333002333102333202333302333402333502333602333702333802333902343002343102343202343302343402343502343602343702343802343902353002353102353202353302353402353502353602353702353802353902363002363102363202363302363402363502363602363702363802363902373002373102373202373302373402373502373602373702373802373902383002383102383202383302383402383502383602383702383802383902393002393102393202393302393402393502393602393702393802393900"
+        }
+      ]
+    },
+    "trx": {
+      "expiration": "2025-05-20T12:01:33",
+      "ref_block_num": 34,
+      "ref_block_prefix": 2133896432,
+      "max_net_usage_words": 0,
+      "max_cpu_usage_ms": 0,
+      "delay_sec": 0,
+      "context_free_actions": [],
+      "actions": [{
+          "account": "flon.test",
+          "name": "add",
+          "authorization": [{
+              "actor": "usera",
+              "permission": "active"
+            }
+          ],
+          "data": {
+            "acct": "usera",
+            "messages": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "39",
+              "40",
+              "41",
+              "42",
+              "43",
+              "44",
+              "45",
+              "46",
+              "47",
+              "48",
+              "49",
+              "50",
+              "51",
+              "52",
+              "53",
+              "54",
+              "55",
+              "56",
+              "57",
+              "58",
+              "59",
+              "60",
+              "61",
+              "62",
+              "63",
+              "64",
+              "65",
+              "66",
+              "67",
+              "68",
+              "69",
+              "70",
+              "71",
+              "72",
+              "73",
+              "74",
+              "75",
+              "76",
+              "77",
+              "78",
+              "79",
+              "80",
+              "81",
+              "82",
+              "83",
+              "84",
+              "85",
+              "86",
+              "87",
+              "88",
+              "89",
+              "90",
+              "91",
+              "92",
+              "93",
+              "94",
+              "95",
+              "96",
+              "97",
+              "98",
+              "99"
+            ]
+          },
+          "hex_data": "00000000007315d6640130013101320133013401350136013701380139023130023131023132023133023134023135023136023137023138023139023230023231023232023233023234023235023236023237023238023239023330023331023332023333023334023335023336023337023338023339023430023431023432023433023434023435023436023437023438023439023530023531023532023533023534023535023536023537023538023539023630023631023632023633023634023635023636023637023638023639023730023731023732023733023734023735023736023737023738023739023830023831023832023833023834023835023836023837023838023839023930023931023932023933023934023935023936023937023938023939"
+        }
+      ],
+      "transaction_extensions": [],
+      "signatures": [
+        "SIG_K1_K4a3PDDMzRrr6ci72KNje7YKEEGdxHXmXvU8DENFoMBuDeLDR65g1vm7sST1pLymBstkGupoM8qc4b11sMcyHv2hjrCHr3"
+      ],
+      "context_free_data": []
+    }
+  },
+  "block_time": "2025-05-20T12:01:03.500",
+  "block_num": 36,
+  "last_irreversible_block": 34,
+  "traces": [{
+      "action_ordinal": 1,
+      "creator_action_ordinal": 0,
+      "closest_unnotified_ancestor_action_ordinal": 0,
+      "receipt": {
+        "receiver": "flon.test",
+        "act_digest": "dc4685f25d4cb0f6fe8a9e33c2a9fca21e029523bdbde66a3fc56730e5233447",
+        "global_sequence": 112,
+        "recv_sequence": 2,
+        "auth_sequence": [[
+            "usera",
+            2
+          ]
+        ],
+        "code_sequence": 1,
+        "abi_sequence": 1
+      },
+      "receiver": "flon.test",
+      "act": {
+        "account": "flon.test",
+        "name": "add",
+        "authorization": [{
+            "actor": "usera",
+            "permission": "active"
+          }
+        ],
+        "data": {
+          "acct": "usera",
+          "messages": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99"
+          ]
+        },
+        "hex_data": "00000000007315d6640130013101320133013401350136013701380139023130023131023132023133023134023135023136023137023138023139023230023231023232023233023234023235023236023237023238023239023330023331023332023333023334023335023336023337023338023339023430023431023432023433023434023435023436023437023438023439023530023531023532023533023534023535023536023537023538023539023630023631023632023633023634023635023636023637023638023639023730023731023732023733023734023735023736023737023738023739023830023831023832023833023834023835023836023837023838023839023930023931023932023933023934023935023936023937023938023939"
+      },
+      "context_free": false,
+      "elapsed": 522,
+      "console": "",
+      "trx_id": "76c0dc5493d3ef0121c16a67b2892547c390fbf1f841ccc783e3f61260e755f0",
+      "block_num": 36,
+      "block_time": "2025-05-20T12:01:03.500",
+      "producer_block_id": null,
+      "account_ram_deltas": [{
+          "account": "usera",
+          "delta": 25890
+        }
+      ],
+      "except": null,
+      "error_code": null,
+      "return_value_hex_data": ""
+    }
+  ],
+  "res_usage": {
+    "payer": "usera",
+    "net_usage": 392,
+    "net_gas": 392,
+    "cpu_usage": 644,
+    "cpu_gas": 644
+  },
+  "gas_traces": [{
+      "account": "usera",
+      "reserved_gas_before": 0,
+      "reserved_gas_after": 0,
+      "used_gas": 1036,
+      "converted_gas": 1036,
+      "ram_gas_delta": {
+        "ram_delta": 25890,
+        "gas_delta": 0
+      }
+    }
+  ]
+}
+
+
+fucli --url http://127.0.0.1:8888 get transaction 76c0dc5493d3ef0121c16a67b2892547c390fbf1f841ccc783e3f61260e755f0
+{
+  "id": "76c0dc5493d3ef0121c16a67b2892547c390fbf1f841ccc783e3f61260e755f0",
+  "trx": {
+    "receipt": {
+      "status": "executed",
+      "cpu_usage_us": 644,
+      "net_usage_words": 49,
+      "trx": [
+        1,{
+          "signatures": [
+            "SIG_K1_K4a3PDDMzRrr6ci72KNje7YKEEGdxHXmXvU8DENFoMBuDeLDR65g1vm7sST1pLymBstkGupoM8qc4b11sMcyHv2hjrCHr3"
+          ],
+          "compression": "none",
+          "packed_context_free_data": "",
+          "packed_trx": "1d6f2c682200f0ac307f00000000010000c8586530695c00000000000052320100000000007315d600000000a8ed3232ab0200000000007315d664013001310132013301340135013601370138013902313002313102313202313302313402313502313602313702313802313902323002323102323202323302323402323502323602323702323802323902333002333102333202333302333402333502333602333702333802333902343002343102343202343302343402343502343602343702343802343902353002353102353202353302353402353502353602353702353802353902363002363102363202363302363402363502363602363702363802363902373002373102373202373302373402373502373602373702373802373902383002383102383202383302383402383502383602383702383802383902393002393102393202393302393402393502393602393702393802393900"
+        }
+      ]
+    },
+    "trx": {
+      "expiration": "2025-05-20T12:01:33",
+      "ref_block_num": 34,
+      "ref_block_prefix": 2133896432,
+      "max_net_usage_words": 0,
+      "max_cpu_usage_ms": 0,
+      "delay_sec": 0,
+      "context_free_actions": [],
+      "actions": [{
+          "account": "flon.test",
+          "name": "add",
+          "authorization": [{
+              "actor": "usera",
+              "permission": "active"
+            }
+          ],
+          "data": {
+            "acct": "usera",
+            "messages": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "39",
+              "40",
+              "41",
+              "42",
+              "43",
+              "44",
+              "45",
+              "46",
+              "47",
+              "48",
+              "49",
+              "50",
+              "51",
+              "52",
+              "53",
+              "54",
+              "55",
+              "56",
+              "57",
+              "58",
+              "59",
+              "60",
+              "61",
+              "62",
+              "63",
+              "64",
+              "65",
+              "66",
+              "67",
+              "68",
+              "69",
+              "70",
+              "71",
+              "72",
+              "73",
+              "74",
+              "75",
+              "76",
+              "77",
+              "78",
+              "79",
+              "80",
+              "81",
+              "82",
+              "83",
+              "84",
+              "85",
+              "86",
+              "87",
+              "88",
+              "89",
+              "90",
+              "91",
+              "92",
+              "93",
+              "94",
+              "95",
+              "96",
+              "97",
+              "98",
+              "99"
+            ]
+          },
+          "hex_data": "00000000007315d6640130013101320133013401350136013701380139023130023131023132023133023134023135023136023137023138023139023230023231023232023233023234023235023236023237023238023239023330023331023332023333023334023335023336023337023338023339023430023431023432023433023434023435023436023437023438023439023530023531023532023533023534023535023536023537023538023539023630023631023632023633023634023635023636023637023638023639023730023731023732023733023734023735023736023737023738023739023830023831023832023833023834023835023836023837023838023839023930023931023932023933023934023935023936023937023938023939"
+        }
+      ],
+      "transaction_extensions": [],
+      "signatures": [
+        "SIG_K1_K4a3PDDMzRrr6ci72KNje7YKEEGdxHXmXvU8DENFoMBuDeLDR65g1vm7sST1pLymBstkGupoM8qc4b11sMcyHv2hjrCHr3"
+      ],
+      "context_free_data": []
+    }
+  },
+  "block_time": "2025-05-20T12:01:03.500",
+  "block_num": 36,
+  "last_irreversible_block": 34,
+  "traces": [{
+      "action_ordinal": 1,
+      "creator_action_ordinal": 0,
+      "closest_unnotified_ancestor_action_ordinal": 0,
+      "receipt": {
+        "receiver": "flon.test",
+        "act_digest": "dc4685f25d4cb0f6fe8a9e33c2a9fca21e029523bdbde66a3fc56730e5233447",
+        "global_sequence": 112,
+        "recv_sequence": 2,
+        "auth_sequence": [[
+            "usera",
+            2
+          ]
+        ],
+        "code_sequence": 1,
+        "abi_sequence": 1
+      },
+      "receiver": "flon.test",
+      "act": {
+        "account": "flon.test",
+        "name": "add",
+        "authorization": [{
+            "actor": "usera",
+            "permission": "active"
+          }
+        ],
+        "data": {
+          "acct": "usera",
+          "messages": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99"
+          ]
+        },
+        "hex_data": "00000000007315d6640130013101320133013401350136013701380139023130023131023132023133023134023135023136023137023138023139023230023231023232023233023234023235023236023237023238023239023330023331023332023333023334023335023336023337023338023339023430023431023432023433023434023435023436023437023438023439023530023531023532023533023534023535023536023537023538023539023630023631023632023633023634023635023636023637023638023639023730023731023732023733023734023735023736023737023738023739023830023831023832023833023834023835023836023837023838023839023930023931023932023933023934023935023936023937023938023939"
+      },
+      "context_free": false,
+      "elapsed": 522,
+      "console": "",
+      "trx_id": "76c0dc5493d3ef0121c16a67b2892547c390fbf1f841ccc783e3f61260e755f0",
+      "block_num": 36,
+      "block_time": "2025-05-20T12:01:03.500",
+      "producer_block_id": null,
+      "account_ram_deltas": [{
+          "account": "usera",
+          "delta": 25890
+        }
+      ],
+      "except": null,
+      "error_code": null,
+      "return_value_hex_data": ""
+    }
+  ],
+  "res_usage": {
+    "payer": "usera",
+    "net_usage": 392,
+    "net_gas": 392,
+    "cpu_usage": 644,
+    "cpu_gas": 644
+  },
+  "gas_traces": [{
+      "account": "usera",
+      "reserved_gas_before": 0,
+      "reserved_gas_after": 0,
+      "used_gas": 1036,
+      "converted_gas": 1036,
+      "ram_gas_delta": {
+        "ram_delta": 25890,
+        "gas_delta": 0
+      }
+    }
+  ]
+}
+
+
+* push action ``flon setparams``:
+fucli --url http://127.0.0.1:8888 push action flon setparams '{"params": '{"max_block_net_usage": 1048576, "target_block_net_usage_pct": 1000, "max_transaction_net_usage": 524288, "base_per_transaction_net_usage": 12, "net_usage_leeway": 500, "context_free_discount_net_usage_num": 20, "context_free_discount_net_usage_den": 100, "max_block_cpu_usage": 200000, "target_block_cpu_usage_pct": 10000, "max_transaction_cpu_usage": 150000, "min_transaction_cpu_usage": 100, "max_transaction_lifetime": 3600, "deferred_trx_expiration_window": 600, "max_transaction_delay": 3888000, "max_inline_action_size": 4096, "max_inline_action_depth": 4, "max_authority_depth": 6, "max_total_ram_usage": 10485760, "gas_per_cpu_ms": 1000, "gas_per_net_kb": 0, "gas_per_ram_kb": 1000}'}' --permission flon@active
+#          flon <= flon::setparams              {"params":{"max_block_net_usage":1048576,"target_block_net_usage_pct":1000,"max_transaction_net_usag...
+executed transaction: 005f051568df2a9e99fcc6290d9f47de846ca14d4a1d21c8a9d26caa465fb4e6  184 bytes  166 us
+warn  2025-05-20T12:01:03.012 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon.test add``:
+fucli --url http://127.0.0.1:8888 push action flon.test add '{"acct": "usera", "messages": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99"]}' --permission usera@active
+#     flon.test <= flon.test::add               {"acct":"usera","messages":["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","1...
+executed transaction: 2551e3812f33c23f92cc3472df7b454d60cc3f50cdfd13d4bfeb9ff5cf1bc100  392 bytes  680 us
+warn  2025-05-20T12:01:05.032 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+fucli --url http://127.0.0.1:8888 get transaction 2551e3812f33c23f92cc3472df7b454d60cc3f50cdfd13d4bfeb9ff5cf1bc100
+{
+  "id": "2551e3812f33c23f92cc3472df7b454d60cc3f50cdfd13d4bfeb9ff5cf1bc100",
+  "trx": {
+    "receipt": {
+      "status": "executed",
+      "cpu_usage_us": 680,
+      "net_usage_words": 49,
+      "trx": [
+        1,{
+          "signatures": [
+            "SIG_K1_Kgyds3UHZfpeQKmMNQGy4ozfP3x63nNSmm2yFbvNkJtcJHKAxETMRuNzdKBLguuNV8cJZUk74GQkh8x6wdDqvianN88nEN"
+          ],
+          "compression": "none",
+          "packed_context_free_data": "",
+          "packed_trx": "1f6f2c6826004745736300000000010000c8586530695c00000000000052320100000000007315d600000000a8ed3232ab0200000000007315d664013001310132013301340135013601370138013902313002313102313202313302313402313502313602313702313802313902323002323102323202323302323402323502323602323702323802323902333002333102333202333302333402333502333602333702333802333902343002343102343202343302343402343502343602343702343802343902353002353102353202353302353402353502353602353702353802353902363002363102363202363302363402363502363602363702363802363902373002373102373202373302373402373502373602373702373802373902383002383102383202383302383402383502383602383702383802383902393002393102393202393302393402393502393602393702393802393900"
+        }
+      ]
+    },
+    "trx": {
+      "expiration": "2025-05-20T12:01:35",
+      "ref_block_num": 38,
+      "ref_block_prefix": 1668498759,
+      "max_net_usage_words": 0,
+      "max_cpu_usage_ms": 0,
+      "delay_sec": 0,
+      "context_free_actions": [],
+      "actions": [{
+          "account": "flon.test",
+          "name": "add",
+          "authorization": [{
+              "actor": "usera",
+              "permission": "active"
+            }
+          ],
+          "data": {
+            "acct": "usera",
+            "messages": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "39",
+              "40",
+              "41",
+              "42",
+              "43",
+              "44",
+              "45",
+              "46",
+              "47",
+              "48",
+              "49",
+              "50",
+              "51",
+              "52",
+              "53",
+              "54",
+              "55",
+              "56",
+              "57",
+              "58",
+              "59",
+              "60",
+              "61",
+              "62",
+              "63",
+              "64",
+              "65",
+              "66",
+              "67",
+              "68",
+              "69",
+              "70",
+              "71",
+              "72",
+              "73",
+              "74",
+              "75",
+              "76",
+              "77",
+              "78",
+              "79",
+              "80",
+              "81",
+              "82",
+              "83",
+              "84",
+              "85",
+              "86",
+              "87",
+              "88",
+              "89",
+              "90",
+              "91",
+              "92",
+              "93",
+              "94",
+              "95",
+              "96",
+              "97",
+              "98",
+              "99"
+            ]
+          },
+          "hex_data": "00000000007315d6640130013101320133013401350136013701380139023130023131023132023133023134023135023136023137023138023139023230023231023232023233023234023235023236023237023238023239023330023331023332023333023334023335023336023337023338023339023430023431023432023433023434023435023436023437023438023439023530023531023532023533023534023535023536023537023538023539023630023631023632023633023634023635023636023637023638023639023730023731023732023733023734023735023736023737023738023739023830023831023832023833023834023835023836023837023838023839023930023931023932023933023934023935023936023937023938023939"
+        }
+      ],
+      "transaction_extensions": [],
+      "signatures": [
+        "SIG_K1_Kgyds3UHZfpeQKmMNQGy4ozfP3x63nNSmm2yFbvNkJtcJHKAxETMRuNzdKBLguuNV8cJZUk74GQkh8x6wdDqvianN88nEN"
+      ],
+      "context_free_data": []
+    }
+  },
+  "block_time": "2025-05-20T12:01:05.500",
+  "block_num": 40,
+  "last_irreversible_block": 38,
+  "traces": [{
+      "action_ordinal": 1,
+      "creator_action_ordinal": 0,
+      "closest_unnotified_ancestor_action_ordinal": 0,
+      "receipt": {
+        "receiver": "flon.test",
+        "act_digest": "dc4685f25d4cb0f6fe8a9e33c2a9fca21e029523bdbde66a3fc56730e5233447",
+        "global_sequence": 118,
+        "recv_sequence": 3,
+        "auth_sequence": [[
+            "usera",
+            3
+          ]
+        ],
+        "code_sequence": 1,
+        "abi_sequence": 1
+      },
+      "receiver": "flon.test",
+      "act": {
+        "account": "flon.test",
+        "name": "add",
+        "authorization": [{
+            "actor": "usera",
+            "permission": "active"
+          }
+        ],
+        "data": {
+          "acct": "usera",
+          "messages": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99"
+          ]
+        },
+        "hex_data": "00000000007315d6640130013101320133013401350136013701380139023130023131023132023133023134023135023136023137023138023139023230023231023232023233023234023235023236023237023238023239023330023331023332023333023334023335023336023337023338023339023430023431023432023433023434023435023436023437023438023439023530023531023532023533023534023535023536023537023538023539023630023631023632023633023634023635023636023637023638023639023730023731023732023733023734023735023736023737023738023739023830023831023832023833023834023835023836023837023838023839023930023931023932023933023934023935023936023937023938023939"
+      },
+      "context_free": false,
+      "elapsed": 542,
+      "console": "",
+      "trx_id": "2551e3812f33c23f92cc3472df7b454d60cc3f50cdfd13d4bfeb9ff5cf1bc100",
+      "block_num": 40,
+      "block_time": "2025-05-20T12:01:05.500",
+      "producer_block_id": null,
+      "account_ram_deltas": [{
+          "account": "usera",
+          "delta": 25890
+        }
+      ],
+      "except": null,
+      "error_code": null,
+      "return_value_hex_data": ""
+    }
+  ],
+  "res_usage": {
+    "payer": "usera",
+    "net_usage": 392,
+    "net_gas": 0,
+    "cpu_usage": 680,
+    "cpu_gas": 680
+  },
+  "gas_traces": [{
+      "account": "usera",
+      "reserved_gas_before": 0,
+      "reserved_gas_after": 0,
+      "used_gas": 26570,
+      "converted_gas": 26570,
+      "ram_gas_delta": {
+        "ram_delta": 25890,
+        "gas_delta": -25890
+      }
+    }
+  ]
+}
+
+
+fucli --url http://127.0.0.1:8888 get transaction 2551e3812f33c23f92cc3472df7b454d60cc3f50cdfd13d4bfeb9ff5cf1bc100
+{
+  "id": "2551e3812f33c23f92cc3472df7b454d60cc3f50cdfd13d4bfeb9ff5cf1bc100",
+  "trx": {
+    "receipt": {
+      "status": "executed",
+      "cpu_usage_us": 680,
+      "net_usage_words": 49,
+      "trx": [
+        1,{
+          "signatures": [
+            "SIG_K1_Kgyds3UHZfpeQKmMNQGy4ozfP3x63nNSmm2yFbvNkJtcJHKAxETMRuNzdKBLguuNV8cJZUk74GQkh8x6wdDqvianN88nEN"
+          ],
+          "compression": "none",
+          "packed_context_free_data": "",
+          "packed_trx": "1f6f2c6826004745736300000000010000c8586530695c00000000000052320100000000007315d600000000a8ed3232ab0200000000007315d664013001310132013301340135013601370138013902313002313102313202313302313402313502313602313702313802313902323002323102323202323302323402323502323602323702323802323902333002333102333202333302333402333502333602333702333802333902343002343102343202343302343402343502343602343702343802343902353002353102353202353302353402353502353602353702353802353902363002363102363202363302363402363502363602363702363802363902373002373102373202373302373402373502373602373702373802373902383002383102383202383302383402383502383602383702383802383902393002393102393202393302393402393502393602393702393802393900"
+        }
+      ]
+    },
+    "trx": {
+      "expiration": "2025-05-20T12:01:35",
+      "ref_block_num": 38,
+      "ref_block_prefix": 1668498759,
+      "max_net_usage_words": 0,
+      "max_cpu_usage_ms": 0,
+      "delay_sec": 0,
+      "context_free_actions": [],
+      "actions": [{
+          "account": "flon.test",
+          "name": "add",
+          "authorization": [{
+              "actor": "usera",
+              "permission": "active"
+            }
+          ],
+          "data": {
+            "acct": "usera",
+            "messages": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "39",
+              "40",
+              "41",
+              "42",
+              "43",
+              "44",
+              "45",
+              "46",
+              "47",
+              "48",
+              "49",
+              "50",
+              "51",
+              "52",
+              "53",
+              "54",
+              "55",
+              "56",
+              "57",
+              "58",
+              "59",
+              "60",
+              "61",
+              "62",
+              "63",
+              "64",
+              "65",
+              "66",
+              "67",
+              "68",
+              "69",
+              "70",
+              "71",
+              "72",
+              "73",
+              "74",
+              "75",
+              "76",
+              "77",
+              "78",
+              "79",
+              "80",
+              "81",
+              "82",
+              "83",
+              "84",
+              "85",
+              "86",
+              "87",
+              "88",
+              "89",
+              "90",
+              "91",
+              "92",
+              "93",
+              "94",
+              "95",
+              "96",
+              "97",
+              "98",
+              "99"
+            ]
+          },
+          "hex_data": "00000000007315d6640130013101320133013401350136013701380139023130023131023132023133023134023135023136023137023138023139023230023231023232023233023234023235023236023237023238023239023330023331023332023333023334023335023336023337023338023339023430023431023432023433023434023435023436023437023438023439023530023531023532023533023534023535023536023537023538023539023630023631023632023633023634023635023636023637023638023639023730023731023732023733023734023735023736023737023738023739023830023831023832023833023834023835023836023837023838023839023930023931023932023933023934023935023936023937023938023939"
+        }
+      ],
+      "transaction_extensions": [],
+      "signatures": [
+        "SIG_K1_Kgyds3UHZfpeQKmMNQGy4ozfP3x63nNSmm2yFbvNkJtcJHKAxETMRuNzdKBLguuNV8cJZUk74GQkh8x6wdDqvianN88nEN"
+      ],
+      "context_free_data": []
+    }
+  },
+  "block_time": "2025-05-20T12:01:05.500",
+  "block_num": 40,
+  "last_irreversible_block": 39,
+  "traces": [{
+      "action_ordinal": 1,
+      "creator_action_ordinal": 0,
+      "closest_unnotified_ancestor_action_ordinal": 0,
+      "receipt": {
+        "receiver": "flon.test",
+        "act_digest": "dc4685f25d4cb0f6fe8a9e33c2a9fca21e029523bdbde66a3fc56730e5233447",
+        "global_sequence": 118,
+        "recv_sequence": 3,
+        "auth_sequence": [[
+            "usera",
+            3
+          ]
+        ],
+        "code_sequence": 1,
+        "abi_sequence": 1
+      },
+      "receiver": "flon.test",
+      "act": {
+        "account": "flon.test",
+        "name": "add",
+        "authorization": [{
+            "actor": "usera",
+            "permission": "active"
+          }
+        ],
+        "data": {
+          "acct": "usera",
+          "messages": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99"
+          ]
+        },
+        "hex_data": "00000000007315d6640130013101320133013401350136013701380139023130023131023132023133023134023135023136023137023138023139023230023231023232023233023234023235023236023237023238023239023330023331023332023333023334023335023336023337023338023339023430023431023432023433023434023435023436023437023438023439023530023531023532023533023534023535023536023537023538023539023630023631023632023633023634023635023636023637023638023639023730023731023732023733023734023735023736023737023738023739023830023831023832023833023834023835023836023837023838023839023930023931023932023933023934023935023936023937023938023939"
+      },
+      "context_free": false,
+      "elapsed": 542,
+      "console": "",
+      "trx_id": "2551e3812f33c23f92cc3472df7b454d60cc3f50cdfd13d4bfeb9ff5cf1bc100",
+      "block_num": 40,
+      "block_time": "2025-05-20T12:01:05.500",
+      "producer_block_id": null,
+      "account_ram_deltas": [{
+          "account": "usera",
+          "delta": 25890
+        }
+      ],
+      "except": null,
+      "error_code": null,
+      "return_value_hex_data": ""
+    }
+  ],
+  "res_usage": {
+    "payer": "usera",
+    "net_usage": 392,
+    "net_gas": 0,
+    "cpu_usage": 680,
+    "cpu_gas": 680
+  },
+  "gas_traces": [{
+      "account": "usera",
+      "reserved_gas_before": 0,
+      "reserved_gas_after": 0,
+      "used_gas": 26570,
+      "converted_gas": 26570,
+      "ram_gas_delta": {
+        "ram_delta": 25890,
+        "gas_delta": -25890
+      }
+    }
+  ]
+}
+
+
+* push action ``flon setparams``:
+fucli --url http://127.0.0.1:8888 push action flon setparams '{"params": '{"max_block_net_usage": 1048576, "target_block_net_usage_pct": 1000, "max_transaction_net_usage": 524288, "base_per_transaction_net_usage": 12, "net_usage_leeway": 500, "context_free_discount_net_usage_num": 20, "context_free_discount_net_usage_den": 100, "max_block_cpu_usage": 200000, "target_block_cpu_usage_pct": 10000, "max_transaction_cpu_usage": 150000, "min_transaction_cpu_usage": 100, "max_transaction_lifetime": 3600, "deferred_trx_expiration_window": 600, "max_transaction_delay": 3888000, "max_inline_action_size": 4096, "max_inline_action_depth": 4, "max_authority_depth": 6, "max_total_ram_usage": 10485760, "gas_per_cpu_ms": 10000, "gas_per_net_kb": 50000, "gas_per_ram_kb": 50000}'}' --permission flon@active
+#          flon <= flon::setparams              {"params":{"max_block_net_usage":1048576,"target_block_net_usage_pct":1000,"max_transaction_net_usag...
+executed transaction: 87e1f3604d3d9d6a7d2364b59af07ffc236bcb8fdcbb7667390b1772380292e5  184 bytes  101 us
+warn  2025-05-20T12:01:05.500 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+* push action ``flon.test add``:
+fucli --url http://127.0.0.1:8888 push action flon.test add '{"acct": "usera", "messages": ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99"]}' --permission usera@active
+#     flon.test <= flon.test::add               {"acct":"usera","messages":["0","1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","1...
+executed transaction: 3561761818bbf72570f6ee8ef22d53ac63425af14978759b15c2a8b73635ec3d  392 bytes  677 us
+warn  2025-05-20T12:01:07.522 fucli     main.cpp:715                  print_result         ] warning: transaction executed locally, but may not be confirmed by the network yet
+
+
+fucli --url http://127.0.0.1:8888 get transaction 3561761818bbf72570f6ee8ef22d53ac63425af14978759b15c2a8b73635ec3d
+{
+  "id": "3561761818bbf72570f6ee8ef22d53ac63425af14978759b15c2a8b73635ec3d",
+  "trx": {
+    "receipt": {
+      "status": "executed",
+      "cpu_usage_us": 677,
+      "net_usage_words": 49,
+      "trx": [
+        1,{
+          "signatures": [
+            "SIG_K1_KhNYTNFNBLudBrQtPmco6oPbByuEpzpWzJTtLJheG5yS8KHvVeRP4W3Pp9rwQntVWMU6eVNHzzFTV8N1mrshb6UwkAMDT4"
+          ],
+          "compression": "none",
+          "packed_context_free_data": "",
+          "packed_trx": "216f2c682b0035fff8d900000000010000c8586530695c00000000000052320100000000007315d600000000a8ed3232ab0200000000007315d664013001310132013301340135013601370138013902313002313102313202313302313402313502313602313702313802313902323002323102323202323302323402323502323602323702323802323902333002333102333202333302333402333502333602333702333802333902343002343102343202343302343402343502343602343702343802343902353002353102353202353302353402353502353602353702353802353902363002363102363202363302363402363502363602363702363802363902373002373102373202373302373402373502373602373702373802373902383002383102383202383302383402383502383602383702383802383902393002393102393202393302393402393502393602393702393802393900"
+        }
+      ]
+    },
+    "trx": {
+      "expiration": "2025-05-20T12:01:37",
+      "ref_block_num": 43,
+      "ref_block_prefix": 3656974133,
+      "max_net_usage_words": 0,
+      "max_cpu_usage_ms": 0,
+      "delay_sec": 0,
+      "context_free_actions": [],
+      "actions": [{
+          "account": "flon.test",
+          "name": "add",
+          "authorization": [{
+              "actor": "usera",
+              "permission": "active"
+            }
+          ],
+          "data": {
+            "acct": "usera",
+            "messages": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "39",
+              "40",
+              "41",
+              "42",
+              "43",
+              "44",
+              "45",
+              "46",
+              "47",
+              "48",
+              "49",
+              "50",
+              "51",
+              "52",
+              "53",
+              "54",
+              "55",
+              "56",
+              "57",
+              "58",
+              "59",
+              "60",
+              "61",
+              "62",
+              "63",
+              "64",
+              "65",
+              "66",
+              "67",
+              "68",
+              "69",
+              "70",
+              "71",
+              "72",
+              "73",
+              "74",
+              "75",
+              "76",
+              "77",
+              "78",
+              "79",
+              "80",
+              "81",
+              "82",
+              "83",
+              "84",
+              "85",
+              "86",
+              "87",
+              "88",
+              "89",
+              "90",
+              "91",
+              "92",
+              "93",
+              "94",
+              "95",
+              "96",
+              "97",
+              "98",
+              "99"
+            ]
+          },
+          "hex_data": "00000000007315d6640130013101320133013401350136013701380139023130023131023132023133023134023135023136023137023138023139023230023231023232023233023234023235023236023237023238023239023330023331023332023333023334023335023336023337023338023339023430023431023432023433023434023435023436023437023438023439023530023531023532023533023534023535023536023537023538023539023630023631023632023633023634023635023636023637023638023639023730023731023732023733023734023735023736023737023738023739023830023831023832023833023834023835023836023837023838023839023930023931023932023933023934023935023936023937023938023939"
+        }
+      ],
+      "transaction_extensions": [],
+      "signatures": [
+        "SIG_K1_KhNYTNFNBLudBrQtPmco6oPbByuEpzpWzJTtLJheG5yS8KHvVeRP4W3Pp9rwQntVWMU6eVNHzzFTV8N1mrshb6UwkAMDT4"
+      ],
+      "context_free_data": []
+    }
+  },
+  "block_time": "2025-05-20T12:01:08.000",
+  "block_num": 45,
+  "last_irreversible_block": 43,
+  "traces": [{
+      "action_ordinal": 1,
+      "creator_action_ordinal": 0,
+      "closest_unnotified_ancestor_action_ordinal": 0,
+      "receipt": {
+        "receiver": "flon.test",
+        "act_digest": "dc4685f25d4cb0f6fe8a9e33c2a9fca21e029523bdbde66a3fc56730e5233447",
+        "global_sequence": 125,
+        "recv_sequence": 4,
+        "auth_sequence": [[
+            "usera",
+            4
+          ]
+        ],
+        "code_sequence": 1,
+        "abi_sequence": 1
+      },
+      "receiver": "flon.test",
+      "act": {
+        "account": "flon.test",
+        "name": "add",
+        "authorization": [{
+            "actor": "usera",
+            "permission": "active"
+          }
+        ],
+        "data": {
+          "acct": "usera",
+          "messages": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99"
+          ]
+        },
+        "hex_data": "00000000007315d6640130013101320133013401350136013701380139023130023131023132023133023134023135023136023137023138023139023230023231023232023233023234023235023236023237023238023239023330023331023332023333023334023335023336023337023338023339023430023431023432023433023434023435023436023437023438023439023530023531023532023533023534023535023536023537023538023539023630023631023632023633023634023635023636023637023638023639023730023731023732023733023734023735023736023737023738023739023830023831023832023833023834023835023836023837023838023839023930023931023932023933023934023935023936023937023938023939"
+      },
+      "context_free": false,
+      "elapsed": 547,
+      "console": "",
+      "trx_id": "3561761818bbf72570f6ee8ef22d53ac63425af14978759b15c2a8b73635ec3d",
+      "block_num": 45,
+      "block_time": "2025-05-20T12:01:08.000",
+      "producer_block_id": null,
+      "account_ram_deltas": [{
+          "account": "usera",
+          "delta": 25890
+        }
+      ],
+      "except": null,
+      "error_code": null,
+      "return_value_hex_data": ""
+    }
+  ],
+  "res_usage": {
+    "payer": "usera",
+    "net_usage": 392,
+    "net_gas": 19600,
+    "cpu_usage": 677,
+    "cpu_gas": 6770
+  },
+  "gas_traces": [{
+      "account": "usera",
+      "reserved_gas_before": 0,
+      "reserved_gas_after": 0,
+      "used_gas": 1320870,
+      "converted_gas": 1320870,
+      "ram_gas_delta": {
+        "ram_delta": 25890,
+        "gas_delta": -1294500
+      }
+    }
+  ]
+}
+
+
+fucli --url http://127.0.0.1:8888 get transaction 3561761818bbf72570f6ee8ef22d53ac63425af14978759b15c2a8b73635ec3d
+{
+  "id": "3561761818bbf72570f6ee8ef22d53ac63425af14978759b15c2a8b73635ec3d",
+  "trx": {
+    "receipt": {
+      "status": "executed",
+      "cpu_usage_us": 677,
+      "net_usage_words": 49,
+      "trx": [
+        1,{
+          "signatures": [
+            "SIG_K1_KhNYTNFNBLudBrQtPmco6oPbByuEpzpWzJTtLJheG5yS8KHvVeRP4W3Pp9rwQntVWMU6eVNHzzFTV8N1mrshb6UwkAMDT4"
+          ],
+          "compression": "none",
+          "packed_context_free_data": "",
+          "packed_trx": "216f2c682b0035fff8d900000000010000c8586530695c00000000000052320100000000007315d600000000a8ed3232ab0200000000007315d664013001310132013301340135013601370138013902313002313102313202313302313402313502313602313702313802313902323002323102323202323302323402323502323602323702323802323902333002333102333202333302333402333502333602333702333802333902343002343102343202343302343402343502343602343702343802343902353002353102353202353302353402353502353602353702353802353902363002363102363202363302363402363502363602363702363802363902373002373102373202373302373402373502373602373702373802373902383002383102383202383302383402383502383602383702383802383902393002393102393202393302393402393502393602393702393802393900"
+        }
+      ]
+    },
+    "trx": {
+      "expiration": "2025-05-20T12:01:37",
+      "ref_block_num": 43,
+      "ref_block_prefix": 3656974133,
+      "max_net_usage_words": 0,
+      "max_cpu_usage_ms": 0,
+      "delay_sec": 0,
+      "context_free_actions": [],
+      "actions": [{
+          "account": "flon.test",
+          "name": "add",
+          "authorization": [{
+              "actor": "usera",
+              "permission": "active"
+            }
+          ],
+          "data": {
+            "acct": "usera",
+            "messages": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21",
+              "22",
+              "23",
+              "24",
+              "25",
+              "26",
+              "27",
+              "28",
+              "29",
+              "30",
+              "31",
+              "32",
+              "33",
+              "34",
+              "35",
+              "36",
+              "37",
+              "38",
+              "39",
+              "40",
+              "41",
+              "42",
+              "43",
+              "44",
+              "45",
+              "46",
+              "47",
+              "48",
+              "49",
+              "50",
+              "51",
+              "52",
+              "53",
+              "54",
+              "55",
+              "56",
+              "57",
+              "58",
+              "59",
+              "60",
+              "61",
+              "62",
+              "63",
+              "64",
+              "65",
+              "66",
+              "67",
+              "68",
+              "69",
+              "70",
+              "71",
+              "72",
+              "73",
+              "74",
+              "75",
+              "76",
+              "77",
+              "78",
+              "79",
+              "80",
+              "81",
+              "82",
+              "83",
+              "84",
+              "85",
+              "86",
+              "87",
+              "88",
+              "89",
+              "90",
+              "91",
+              "92",
+              "93",
+              "94",
+              "95",
+              "96",
+              "97",
+              "98",
+              "99"
+            ]
+          },
+          "hex_data": "00000000007315d6640130013101320133013401350136013701380139023130023131023132023133023134023135023136023137023138023139023230023231023232023233023234023235023236023237023238023239023330023331023332023333023334023335023336023337023338023339023430023431023432023433023434023435023436023437023438023439023530023531023532023533023534023535023536023537023538023539023630023631023632023633023634023635023636023637023638023639023730023731023732023733023734023735023736023737023738023739023830023831023832023833023834023835023836023837023838023839023930023931023932023933023934023935023936023937023938023939"
+        }
+      ],
+      "transaction_extensions": [],
+      "signatures": [
+        "SIG_K1_KhNYTNFNBLudBrQtPmco6oPbByuEpzpWzJTtLJheG5yS8KHvVeRP4W3Pp9rwQntVWMU6eVNHzzFTV8N1mrshb6UwkAMDT4"
+      ],
+      "context_free_data": []
+    }
+  },
+  "block_time": "2025-05-20T12:01:08.000",
+  "block_num": 45,
+  "last_irreversible_block": 43,
+  "traces": [{
+      "action_ordinal": 1,
+      "creator_action_ordinal": 0,
+      "closest_unnotified_ancestor_action_ordinal": 0,
+      "receipt": {
+        "receiver": "flon.test",
+        "act_digest": "dc4685f25d4cb0f6fe8a9e33c2a9fca21e029523bdbde66a3fc56730e5233447",
+        "global_sequence": 125,
+        "recv_sequence": 4,
+        "auth_sequence": [[
+            "usera",
+            4
+          ]
+        ],
+        "code_sequence": 1,
+        "abi_sequence": 1
+      },
+      "receiver": "flon.test",
+      "act": {
+        "account": "flon.test",
+        "name": "add",
+        "authorization": [{
+            "actor": "usera",
+            "permission": "active"
+          }
+        ],
+        "data": {
+          "acct": "usera",
+          "messages": [
+            "0",
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38",
+            "39",
+            "40",
+            "41",
+            "42",
+            "43",
+            "44",
+            "45",
+            "46",
+            "47",
+            "48",
+            "49",
+            "50",
+            "51",
+            "52",
+            "53",
+            "54",
+            "55",
+            "56",
+            "57",
+            "58",
+            "59",
+            "60",
+            "61",
+            "62",
+            "63",
+            "64",
+            "65",
+            "66",
+            "67",
+            "68",
+            "69",
+            "70",
+            "71",
+            "72",
+            "73",
+            "74",
+            "75",
+            "76",
+            "77",
+            "78",
+            "79",
+            "80",
+            "81",
+            "82",
+            "83",
+            "84",
+            "85",
+            "86",
+            "87",
+            "88",
+            "89",
+            "90",
+            "91",
+            "92",
+            "93",
+            "94",
+            "95",
+            "96",
+            "97",
+            "98",
+            "99"
+          ]
+        },
+        "hex_data": "00000000007315d6640130013101320133013401350136013701380139023130023131023132023133023134023135023136023137023138023139023230023231023232023233023234023235023236023237023238023239023330023331023332023333023334023335023336023337023338023339023430023431023432023433023434023435023436023437023438023439023530023531023532023533023534023535023536023537023538023539023630023631023632023633023634023635023636023637023638023639023730023731023732023733023734023735023736023737023738023739023830023831023832023833023834023835023836023837023838023839023930023931023932023933023934023935023936023937023938023939"
+      },
+      "context_free": false,
+      "elapsed": 547,
+      "console": "",
+      "trx_id": "3561761818bbf72570f6ee8ef22d53ac63425af14978759b15c2a8b73635ec3d",
+      "block_num": 45,
+      "block_time": "2025-05-20T12:01:08.000",
+      "producer_block_id": null,
+      "account_ram_deltas": [{
+          "account": "usera",
+          "delta": 25890
+        }
+      ],
+      "except": null,
+      "error_code": null,
+      "return_value_hex_data": ""
+    }
+  ],
+  "res_usage": {
+    "payer": "usera",
+    "net_usage": 392,
+    "net_gas": 19600,
+    "cpu_usage": 677,
+    "cpu_gas": 6770
+  },
+  "gas_traces": [{
+      "account": "usera",
+      "reserved_gas_before": 0,
+      "reserved_gas_after": 0,
+      "used_gas": 1320870,
+      "converted_gas": 1320870,
+      "ram_gas_delta": {
+        "ram_delta": 25890,
+        "gas_delta": -1294500
+      }
+    }
+  ]
+}
+
+
